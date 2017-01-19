@@ -1,0 +1,20 @@
+<ion-view class="activities" hide-back-button="true">
+  <custom-backdrop></custom-backdrop>
+  <div class="tab-container explore-tabs" data-ng-hide="$state.includes('inapp.activities.notification-image') || $state.includes('inapp.activities.notification-item-comments') || $state.includes('inapp.activities.selected-user')">
+    <a class="tab-item" ui-sref="inapp.activities.connection.friends-request" ui-sref-active="active">
+      <i class="icon ion-android-favorite"></i>
+      Friends Request
+    </a>
+    <a class="tab-item" ui-sref="inapp.activities.connection.suggested-followers" ui-sref-active="active">
+      <i class="icon ion-person-stalker"></i>
+      Suggested Followers
+    </a>
+    <a class="tab-item" ui-sref="inapp.activities.connection.request-sent" ui-sref-active="active">
+      <i class="icon ion-person-add"></i>
+      Request sent
+    </a>
+  </div>
+  <ion-nav-view name="activitiesConnectionTabs"></ion-nav-view>
+</ion-view>
+
+

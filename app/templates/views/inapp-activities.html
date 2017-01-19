@@ -1,0 +1,28 @@
+<ion-view class="activities">
+  <ion-content>
+    <custom-backdrop></custom-backdrop>
+    <div class="tab-container" data-ng-hide="$state.includes('inapp.activities.notification-image') ||
+          $state.includes('inapp.activities.notification-item-comments') || $state.includes('inapp.activities.selected-user')">
+      <a class="tab-item tab-left" ui-sref="inapp.activities.notification" ui-sref-active="active"
+         ng-controller="TabsController">
+        <div class="tab-text">
+          Notifications
+        </div>
+      </a>
+      <div class="divider"></div>
+      <a class="tab-item tab-right" ui-sref="inapp.activities.connection.friends-request"
+         ng-class="{active: $state.current.name === 'inapp.activities.connection.friends-request',
+                    active1: $state.current.name === 'inapp.activities.connection.suggested-followers',
+                    active2: $state.current.name === 'inapp.activities.connection.request-sent'}"
+         ng-controller="MyConnectionsController">
+        <div class="tab-text">
+          <div class="connections-badge" ng-if="friendRequest.length > 0">
+            {{(friendRequest.length) }}
+          </div>
+          Suggestions
+        </div>
+      </a>
+    </div>
+    <ion-nav-view name="activitiesTabs" class="activities-tab"></ion-nav-view>
+  </ion-content>
+</ion-view>

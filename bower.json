@@ -1,0 +1,34 @@
+{
+  "name": "Outfitpic",
+  "author": "ofp dev team <info@outfitpic.com>",
+  "private": "true",
+  "devDependencies": {
+    "ionic-platform-web-client": "~0.2.1"
+  },
+  "dependencies": {
+    "ionic": "driftyco/ionic-bower#v1.2.4",
+    "angular": "~1.4.3",
+    "ngCordova": "~0.1.17-alpha",
+    "angular-resource": "~1.4.3",
+    "lodash": "~3.10.0",
+    "firebase": "2.3.2",
+    "angularfire": "~1.1.1",
+    "platform": "~1.3.0",
+    "angular-websocket": "~1.0.9",
+    "angular-validation-match": "~1.5.0",
+    "retina.js-js": "~1.0.2",
+    "angular-translate": "~2.8.1",
+    "angular-toArrayFilter": "~1.0.1",
+    "firebase-util": "~0.2.5",
+    "ionic-filter-bar": "~1.1.1",
+    "ionic-scroll-sista": "~1.0.7",
+    "social-share-js": "~1.0.4",
+    "ionic-toast": "~0.2.0",
+    "angular-local-storage": "~0.2.3",
+    "angular-moment": "~0.10.3",
+    "moment": "~2.11.1"
+  },
+  "resolutions": {
+    "angular": "1.4.3"
+  }
+}

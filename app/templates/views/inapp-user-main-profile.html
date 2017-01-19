@@ -1,0 +1,102 @@
+<ion-view class="profile">
+  <custom-backdrop></custom-backdrop>
+  <ion-nav-title>
+    <div class="header-icon"></div>
+  </ion-nav-title>
+  <ion-content scroll-sista="tabs">
+    <div class="content">
+      <div class="top-section">
+        <div class="row top-row">
+          <div class="row avatar-details">
+            <div class="col-33">
+            </div>
+            <div class="col-33 avatar-container">
+              <div class="item-avatar">
+                <div class="avatar-image" ng-style="{'background-image': 'url( data:image/jpeg;base64,' + data.avatar.image + ')'}">
+                </div>
+                <span ng-hide="data.avatar.image" class="profile-avatar-placeholder">
+                    <i class="icon-avatar-placeholder"></i>
+                </span>
+              </div>
+            </div>
+            <div class="col-33">
+            </div>
+          </div>
+          <div class="row profile-details">
+            <div class="name-container">
+              <span class="name">
+                  @{{data.username}}
+              </span>
+              <span class="description">
+                  {{data.description}}
+              </span>
+              <span class="location">
+                  {{data.location}}
+              </span>
+            </div>
+          </div>
+          <div class="row outfitpic-details">
+            <div class="col-33 friends-container" ui-sref="inapp.profile-friends-list">
+              <div class="holder-container">
+                <div class="icon-holder">
+                  <i class="icon ion-android-people"></i>
+                  <span class="social-title">
+                      Friends
+                  </span>
+                </div>
+                <div class="count">
+                  <span class="zero-count" ng-hide="data.friend">0</span>
+                  {{(data.friend| toArray :false|filter:query).length }}
+                </div>
+              </div>
+            </div>
+            <div class="col-33 user-level-container" ng-click="modal.show()">
+              <div class="user-level-icon"></div>
+            </div>
+            <div class="col-33 followers-container" ui-sref="inapp.profile-followers-list">
+              <div class="holder-container">
+                <div class="icon-holder">
+                  <i class="icon ion-android-person"></i>
+                  <span class="social-title">
+                      Followers
+                  </span>
+                </div>
+                <div class="count">
+                  <span class="zero-count" ng-hide="data.followers">0</span>
+                  {{(data.followers| toArray :false|filter:query).length }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cover-mask"></div>
+        <div class="cover-image" ng-style="{'background-image': 'url( data:image/jpeg;base64,' + data.avatar.image + ')'}"></div>
+      </div>
+      <div class="tab-container">
+        <a class="tab-item" ui-sref="inapp.profile-selected-image-user.wardrobe" ui-sref-active="active">
+          <span class="count" ng-hide="data.wardrobe">0</span>
+          <span class="count" ng-hide="!data.wardrobe">{{(data.wardrobe| toArray :false|filter:query).length }}</span>
+        <span class="description">
+          Wardrobe
+        </span>
+        </a>
+        <a class="tab-item" ui-sref="inapp.profile-selected-image-user.outfits" ui-sref-active="active">
+          <span class="count" ng-hide="data.posts">0</span>
+          <span class="count" ng-hide="!data.posts">{{(data.posts| toArray :false|filter:query).length }}</span>
+        <span class="description">
+          Outfits
+        </span>
+        </a>
+        <a class="tab-item" ui-sref="inapp.profile-selected-image-user.likes" ui-sref-active="active">
+          <span class="count" ng-hide="data.likedPost">0</span>
+          <span class="count" ng-hide="!data.likedPost">{{(data.likedPost| toArray :false|filter:query).length }}</span>
+        <span class="description">
+          Likes
+        </span>
+        </a>
+      </div>
+      <div class="gallery-holder" style="height:{{progress}}px">
+        <ion-nav-view name="userProfileTabs"></ion-nav-view>
+      </div>
+  </ion-content>
+</ion-view>

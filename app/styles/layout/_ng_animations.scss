@@ -1,0 +1,350 @@
+// NG ANIMATIONS
+//------------------------------------------------------------------------//
+
+// FADE
+//--------------------------------//
+.fade.ng-enter {
+  transition:0.2s linear all;
+  opacity:0;
+}
+
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+.fade.ng-leave {
+  transition:0.2s linear all;
+  opacity:1;
+}
+.fade.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+// FADE BRAND TAG - EXPANDED
+//--------------------------------//
+.fadeBrandTag.ng-enter {
+  transition:0.3s linear all;
+  opacity:0;
+}
+.fadeBrandTag.ng-enter.ng-enter-active {
+  opacity:1;
+}
+.fadeBrandTag.ng-leave {
+  transition:0.3s linear all;
+  opacity:1;
+}
+.fadeBrandTag.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+
+// FADE GALLERY BUTTON
+//--------------------------------//
+.fadeUploadCamera.ng-enter {
+  transition:0.2s linear all;
+  opacity:0;
+  transform: translate3d(30px, 50px, 0px);
+}
+.fadeUploadCamera.ng-enter.ng-enter-active {
+  opacity:1;
+  transform: translate3d(0px, 0px, 0px);
+}
+.fadeUploadCamera.ng-leave {
+  transition:0.2s linear all;
+  opacity:1;
+  transform: translate3d(0px, 0px, 0px);
+}
+.fadeUploadCamera.ng-leave.ng-leave-active {
+  opacity:0;
+  transform: translate3d(30px, 50px, 0px);
+}
+
+// FADE CAMERA BUTTON
+//--------------------------------//
+.fadeUploadImage.ng-enter {
+  transition:0.2s linear all;
+  opacity:0;
+  transform: translate3d(-30px, 50px, 0px);
+}
+.fadeUploadImage.ng-enter.ng-enter-active {
+  opacity:1;
+  transform: translate3d(0px, 0px, 0px);
+}
+.fadeUploadImage.ng-leave {
+  transition:0.2s linear all;
+  opacity:1;
+  transform: translate3d(0px, 0px, 0px);
+}
+.fadeUploadImage.ng-leave.ng-leave-active {
+  opacity:0;
+  transform: translate3d(-30px, 50px, 0px);
+}
+
+
+// FADE TOPIC BUTTON
+//--------------------------------//
+.fadeUploadTopic.ng-enter {
+  transition:0.2s linear all;
+  opacity:0;
+  transform: translate3d(0px, 50px, 0px);
+}
+.fadeUploadTopic.ng-enter.ng-enter-active {
+  opacity:1;
+  transform: translate3d(0px, 0px, 0px);
+}
+.fadeUploadTopic.ng-leave {
+  transition:0.2s linear all;
+  opacity:1;
+  transform: translate3d(0px, 0px, 0px);
+}
+.fadeUploadTopic.ng-leave.ng-leave-active {
+  opacity:0;
+  transform: translate3d(0px, 50px, 0px);
+}
+
+
+
+// COLLAPSE BRAND TAG - ITEM EXPANDED PAGE
+//--------------------------------------//
+.tag-collapse.ng-enter{
+  transition: 0.5s linear all;
+  overflow:hidden;
+}
+
+.tag-collapse.ng-leave {
+  transition: 0.5s linear all;
+  overflow:hidden;
+}
+
+.tag-collapse.ng-enter {
+  max-height: 0;
+  opacity: 0;
+}
+
+.tag-collapse.ng-enter.ng-enter-active {
+  max-height: 999px;
+  opacity: 1;
+}
+
+.tag-collapse.ng-leave {
+  max-height: 999px;
+  opacity: 1;
+}
+
+.tag-collapse.ng-leave.ng-leave-active {
+  max-height: 0;
+  opacity: 0;
+}
+//
+//// FADE BRAND TAG - ITEM EXPANDED PAGE
+////--------------------------------------//
+
+.title-collapse.ng-animate {
+  transition: 300ms linear all;
+}
+
+
+.title-collapse.ng-enter {
+  max-height: 0;
+  opacity: 0;
+}
+
+.title-collapse.ng-leave {
+  max-height: 600px;
+  opacity: 1;
+}
+
+.title-collapse.ng-enter.ng-enter-active {
+  max-height: 600px;
+  opacity: 1;
+}
+
+.title-collapse.ng-leave.ng-leave-active {
+  max-height: 0;
+  opacity: 0;
+}
+
+
+// COLLAPSE & EXPAND IN SELECTED ITEM SECTION
+//--------------------------------------//
+
+
+.show-details.ng-enter{
+  transition: 0.5s linear all;
+}
+
+.show-details.ng-leave {
+  transition: 0.5s linear all;
+}
+
+.show-details.ng-enter {
+  max-height: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.show-details.ng-enter.ng-enter-active {
+  max-height: 999px;
+  height: 100%;
+  opacity: 1;
+}
+
+.show-details.ng-leave {
+  max-height: 999px;
+  height: 100%;
+  opacity: 1;
+}
+
+.show-details.ng-leave.ng-leave-active {
+  max-height: 0;
+  height: 0;
+  opacity: 0;
+}
+
+
+// FADE UP NEXT BUTTON
+//--------------------------------------//
+
+.fadeUpNext.ng-enter{
+  bottom: -20px;
+  transition:0.2s linear all;
+  opacity:0;
+}
+
+.fadeUpNext.ng-enter.ng-enter-active {
+  opacity:1;
+  bottom: 0;
+}
+.fadeUpNext.ng-leave {
+  transition:0.2s linear all;
+  opacity:1;
+  bottom: 0;
+}
+.fadeUpNext.ng-leave.ng-leave-active {
+  opacity:0;
+  bottom: -20px;
+}
+
+
+// FADE UP PROFILE BKG IMAGES
+//--------------------------------------//
+.fadeUpBkg.ng-enter{
+  // transform: translate3d(0px, -160px, 0px);
+  transition:0.3s linear all;
+  opacity:0;
+}
+
+.fadeUpBkg.ng-enter.ng-enter-active {
+  opacity:1;
+  // transform: translate3d(0px, 0px, 0px);
+}
+.fadeUpBkg.ng-leave {
+  transition:0.3s linear all;
+  opacity:1;
+  transform: translate3d(0px, 0px, 0px);
+}
+.fadeUpBkg.ng-leave.ng-leave-active {
+  opacity:0;
+  transform: translate3d(0px, -160px, 0px);
+}
+
+
+
+// MOVE TAG BUTTON
+//--------------------------------------//
+.moveTagButton.ng-enter{
+  transition:0.3s linear all;
+
+}
+
+.moveTagButton.ng-enter.ng-enter-active {
+  bottom: 19px;
+}
+.moveTagButton.ng-leave {
+  transition:0.3s linear all;
+  bottom: 19px;
+}
+.moveTagButton.ng-leave.ng-leave-active {
+
+}
+
+
+// SLIDE IN RIGHT MODAL
+//--------------------------------------//
+.slide-in-right {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%); }
+
+.slide-in-right.ng-enter, .slide-in-right > .ng-enter {
+  -webkit-transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms;
+  transition: all cubic-bezier(0.1, 0.7, 0.1, 1) 400ms; }
+
+.slide-in-right.ng-enter-active, .slide-in-right > .ng-enter-active {
+  -webkit-transform: translateX(0);
+  transform: translateX(0); }
+
+.slide-in-right.ng-leave, .slide-in-right > .ng-leave {
+  -webkit-transition: all ease-in-out 250ms;
+  transition: all ease-in-out 250ms; }
+
+
+// CAMERA TAG BUTTON
+//--------------------------------------//
+
+.add-tag.ng-enter{
+  bottom: 13%  !important;
+  transition:0.5s ease-in-out all;
+  opacity:0;
+}
+
+.add-tag.ng-enter.ng-enter-active {
+  opacity:1;
+  bottom: 23% !important;
+}
+.add-tag.ng-leave {
+  transition:0.5s ease-in-out all;
+  opacity:1;
+  bottom: 23%  !important;
+}
+.add-tag.ng-leave.ng-leave-active {
+  opacity:0;
+  bottom: 13%  !important;
+}
+
+.finish-tag.ng-enter{
+  top: -17%  !important;
+  transition:0.3s ease-in-out all;
+  opacity:0;
+}
+
+.finish-tag.ng-enter.ng-enter-active {
+  opacity:1;
+  top: 17% !important;
+}
+.finish-tag.ng-leave {
+  transition:0.5s ease-in-out all;
+  opacity:1;
+  top: 17%  !important;
+}
+.finish-tag.ng-leave.ng-leave-active {
+  opacity:0;
+  top: -17%  !important;
+}
+
+
+// FADE
+//--------------------------------//
+.fadeInFeed.ng-enter {
+  transition:0.2s linear all;
+  opacity:0;
+}
+
+.fadeInFeed.ng-enter.ng-enter-active {
+  opacity:1;
+}
+.fadeInFeed.ng-leave {
+  transition:0.2s linear all;
+  opacity:1;
+}
+.fadeInFeed.ng-leave.ng-leave-active {
+  opacity:0;
+}

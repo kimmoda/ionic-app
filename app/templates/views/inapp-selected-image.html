@@ -1,0 +1,271 @@
+<ion-view hide-back-button="hideBackButton">
+  <custom-backdrop></custom-backdrop>
+  <ion-nav-title>
+    {{::navTitle}}
+  </ion-nav-title>
+  <ion-nav-buttons side="left" >
+    <button ng-if="showTempBackButton" ng-click="myGoBack()" class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right" >
+    <button class="social-links" ng-click="imageOptions()">
+      <div class="share-icon">
+        <i class="icon ion-android-more-vertical"></i>
+      </div>
+    </button>
+  </ion-nav-buttons>
+  <ion-content delegate-handle="image-selected" class="image-item-expanded" scroll-sista="tabs" ng-class="{notifcationfix: $state.current.name === 'inapp.activities.notification-image'}">
+    <div class="row image-row">
+      <div class="col">
+        <div class="main-image">
+          <div class="image-holder" id="image-holder">
+            <ion-spinner icon="spiral" ng-if="!imageHasLoaded" class="spinner spinner-ios feed-spinner"></ion-spinner>
+            <img ng-src="{{::imgPostUrl}}" id="image-height" alt="">
+            <div class="tags {{::item.style}}" ng-repeat="(description, item) in tags" style="  top: {{(containerHeight * item.positionY) / orgContainerHeight}}px;left: {{(containerWidth * item.positionX) / orgContainerWidth}}px;">
+              <div class="tag-brand fadeBrandTag" ng-if="tagShow">
+                {{::item.itemDescription.join(', ')}}
+              </div>
+              <div class="tag-pin fade" ng-if="tagShow"></div>
+            </div>
+          </div>
+          <div class="tag-icon" ng-if="tags !== undefined" ng-click="showTags()">
+            <div class="camera-icon" ng-class="{'opaque': tagShow}"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row details-row">
+      <div class="col">
+        <div class="share-icons">
+          <div class="item item-details">
+            <div class="avatar-holder" ng-click="viewUser(user.$id)">
+              <div class="avatar-image" ng-style="{'background-image': 'url( data:image/jpeg;base64,' + user.avatar.image + ')'}">
+              </div>
+              <span ng-hide="user.avatar.image" class="profile-avatar-placeholder">
+                <i class="icon-avatar-placeholder"></i>
+              </span>
+            </div>
+            <div class="title-holder">
+              <span class="username">@{{::user.username}}</span>
+              <span class="description">
+                  {{::user.description}}
+              </span>
+              <span class="followers-count" ng-show="!user.friend">0 followers</span>
+              <span class="followers-count" ng-show="user.friend">{{(user.friend| toArray :false|filter:query).length }} followers</span>
+            </div>
+            <div class="add-user" ng-hide="user.$id == userId" ng-click="addFriend(user.$id)" ng-class="{'already-added' : checkIfUserHasBeenAdded(user)}">
+              <i class="icon ion-android-person-add"></i>
+            </div>
+          </div>
+          <div class="item item-social tag-collapse" ng-if="!tagShow">
+            <div class="details-holder" id="scroll-to-section">
+              <div class="like-indicator chat-icon" ng-class="{'active' : post.comments}" ng-click="showComments()">
+                <i class="icon ion-ios-chatbubble"></i>
+                <div class="like-description">
+                  Say something
+                </div>
+                <span class="count" ng-hide="post.comments == null">
+                  <span class="number">{{::(post.comments| toArray : false|filter:query).length}}</span>
+                </span>
+              </div>
+              <div class="like-indicator" ng-class="{'active' : post.upVote}" ng-click="upVote(post, user)">
+                <i class="icon ion-android-star"></i>
+                <div class="like-description">
+                  Do you like this?
+                </div>
+                <span class="count" ng-hide="post.upVote == null">
+                    <span class="number">{{::(post.upVote| toArray : false|filter:query).length}}</span>
+                </span>
+              </div>
+              <div class="like-indicator" ng-class="{'active' : post.wardrobeRef}" ng-click="addToWardrobe(post, user)">
+                <i class="icon-myfeed-icon"></i>
+                <div class="like-description">
+                  Hang in wardrobe
+                </div>
+                <span class="count" ng-hide="post.wardrobeRef == null">
+                  <span class="number">{{::(post.wardrobeRef| toArray : false|filter:query).length}}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="comment-section show-details" ng-if="commentsShow">
+          <div class="list comment-input">
+            <div class="item item-input-inset">
+              <form name="commentForm" ng-submit="addComment(image.comments, item)">
+                <label class="item-input-wrapper">
+                  <input type="text" maxlength="300" ng-maxlength="300" placeholder="Type something" ng-model="image.comments"
+                         ng-keypress="tagUserInPost($event)" focus-input="isOpen">
+                </label>
+                <button class="button button-primary-full" type="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- Friends list from @ input -->
+          <ion-list class="friends-list" ng-if="showFriendsList">
+            <ion-item ng-repeat="friend in userFriends" ng-init="user = users.$load(friend.user)" ng-click="addUserToComment(user)">
+              <div class="item-holder">
+                <avatar-holder class="avatar-container"></avatar-holder>
+                <div class="click-holder">
+                  <div class="notification-text">
+                    <div class="main-content">
+                      <span class="user"> @{{::user.username}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ion-item>
+          </ion-list>
+
+          <ion-list show-delete="shouldShowDelete" can-swipe="listCanSwipe" ng-repeat="itemComments in comments | orderBy:'createdAt' | limitTo : 4"
+                    ng-init="user = users.$load(itemComments.user)">
+            <ion-item class="comment-list-holder" >
+              <div class="comments-list">
+                <div class="comment-container">
+                  <avatar-holder></avatar-holder>
+                  <div class="main-text" ng-class="{'no-user' : !user.username}">
+                    <div class="user">@{{itemComments.userName}}</div>
+                    <div class="comment">
+                      <p ng-bind-html="itemComments.text"></p>
+                    </div>
+                  </div>
+                  <div class="timestamp">
+                    <i class="icon ion-android-time"></i>
+                    <span am-time-ago="itemComments.timestamp"></span>
+                  </div>
+                </div>
+
+              </div>
+              <ion-option-button class="button-positive delete-notification" ng-click="deleteItem(itemComments)">
+                <i class="ion-ios-trash-outline cross-icon"></i>
+              </ion-option-button>
+            </ion-item>
+
+          </ion-list>
+          <div class="comments-links" ng-if="comments.length > 4">
+            <a ng-click="showAllComments()">show all comments</a>
+          </div>
+
+
+        </div>
+        <div class="tag-collapse" ng-if="tagShow">
+          <ul class="clothing-list">
+            <li ng-repeat="(description, item) in tags">
+              <div class="tag-icon-holder">
+                <span class="cloth-item cloth-icon"
+                      ng-class="{'male': item.itemSex == 'male', 'female': item.itemSex == 'female'}"
+                      ng-style="{'background-image': 'url(./images/cloth-item-' + item.itemSex + '-' + item.itemIcon + '.png)'}"></span>
+              </div>
+              <div class="clothing-details">
+                <div class="clothing-brand">
+                  {{::item.itemDescription.join(', ')}}
+                </div>
+                <div class="clothing-description">
+                  {{::item.itemName}}
+                </div>
+              </div>
+              <div class="arrow-icon">
+                <i class="icon ion-ios-arrow-right"></i>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row shopping-row">
+      <div class="title row">
+        Similar outfits
+        <div class="expanded-item-divider"></div>
+      </div>
+      <div class="col col-50">
+        <div class="shopping-idea">
+          <div class="image-holder">
+            <img src="./images/shopping-image2.jpg" alt="">
+          </div>
+          <div class="item-details">
+            <div class="brand">
+              Ralph Lauren
+            </div>
+            <div class="bottom-row">
+              <div class="description">
+                Black Hoodie
+              </div>
+              <div class="price">
+                £79.99
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="shopping-idea">
+          <div class="image-holder">
+            <img src="./images/shopping-image2.jpg" alt="">
+          </div>
+          <div class="item-details">
+            <div class="brand">
+              Ralph Lauren
+            </div>
+            <div class="bottom-row">
+              <div class="description">
+                Black Hoodie
+              </div>
+              <div class="price">
+                £79.99
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="shopping-idea">
+          <div class="image-holder">
+            <img src="./images/shopping-image2.jpg" alt="">
+          </div>
+          <div class="item-details">
+            <div class="brand">
+              Ralph Lauren
+            </div>
+            <div class="bottom-row">
+              <div class="description">
+                Black Hoodie
+              </div>
+              <div class="price">
+                £79.99
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="shopping-idea">
+          <div class="image-holder">
+            <img src="./images/shopping-image2.jpg" alt="">
+          </div>
+          <div class="item-details">
+            <div class="brand">
+              Ralph Lauren
+            </div>
+            <div class="bottom-row">
+              <div class="description">
+                Black Hoodie
+              </div>
+              <div class="price">
+                £79.99
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </ion-content>
+</ion-view>
+

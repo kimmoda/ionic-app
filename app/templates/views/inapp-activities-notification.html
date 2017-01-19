@@ -1,0 +1,50 @@
+<ion-view class="notification-feed" hide-back-button="true">
+  <ion-nav-title>
+    <div class="header-icon"></div>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+    <div class="back-to-top" id="top-button" ng-click="scrollToTop()">
+      <i class="icon ion-android-arrow-up"></i>
+    </div>
+    <button ng-if="notificationMessage.length > 0" class="button button-icon header-delete-notification fade" ng-click="deleteAllNotifications()">
+      <i class="ion-ios-trash-outline cross-icon"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content on-scroll="gotScrolled()">
+    <ion-list show-delete="shouldShowDelete" can-swipe="listCanSwipe">
+      <ion-item ng-class="{'active' : item.status == 'unread'}" ng-repeat="item in notificationMessage" ng-init="user = users.$load(item.user)">
+          <div class="item-holder">
+            <avatar-holder class="avatar-container"></avatar-holder>
+            <div ng-click="changeState(item)" class="click-holder">
+              <div class="notification-text">
+                <div class="main-content">
+                  <span class="user"> @{{::user.username}}</span>
+                  <span ng-if="item.notificationId == 1">liked your post</span>
+                  <span ng-if="item.notificationId == 2">added it to their wardrobe</span>
+                  <span ng-if="item.notificationId == 3">Commented on your outfit</span>
+                  <span ng-if="item.notificationId == 4">tagged you within a comment</span>
+                </div>
+                <div class="timestamp">
+                  <i class="icon ion-android-time"></i>
+                  <span class="timestamp" am-time-ago="item.timestamp"></span>
+                </div>
+              </div>
+              <div class="notication-image" ng-init="image = images.$load(item.postId)">
+                <div class="image" style="background-image: url('data:image/jpeg;base64,{{image.image}}')">
+                </div>
+              </div>
+            </div>
+          </div>
+          <ion-option-button class="button-positive delete-notification" ng-click="deleteItem(item)">
+            <i class="ion-ios-trash-outline cross-icon"></i>
+          </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="20px"></ion-infinite-scroll>
+    <ion-spinner ng-if="!noMoreItemsAvailable" icon="spiral" class="spinner spinner-ios feed-spinner"></ion-spinner>
+    <div class="no-more-items" ng-show="noMorePlaceholder">
+      No more Notifications
+    </div>
+  </ion-content>
+</ion-view>

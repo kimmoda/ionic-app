@@ -1,0 +1,411 @@
+// CAMERA TAKING PROCESS
+//------------------------------------------------------------------------//
+
+.camera {
+  background-color: $bottom-nav-bkg;
+  display: flex;
+  flex-direction: column;
+  a {
+    color: $primary-color;
+  }
+  input[type="text"] {
+    color: black;
+  }
+  .ng-hide-add {
+    @include fadeOut($duration: 0.2s, $delay: 0s);
+  }
+  .ng-hide-remove {
+    @include fadeIn($duration: 0.2s, $delay: 0s);
+  }
+  .scroll {
+    height: 100%;
+  }
+  .overflow {
+    overflow-y: visible !important;
+  }
+  .tester {
+    position: absolute;
+    bottom: 60px;
+    font-weight: bold;
+    z-index: 9999;
+    font-size: 10px;
+    color: white;
+  }
+  .farRight {
+    span.text {
+      right: 0;
+      &:after {
+        left: initial !important;
+        right: 7px;
+      }
+    }
+  }
+
+  .farTop {
+    span.text {
+      top: 25px !important;
+      right: 0;
+      &:after {
+        left: initial !important;
+        right: 7px;
+        transform: rotate(180deg);
+        top: -4px;
+      }
+    }
+  }
+
+  .farTopLeft {
+    span.text {
+      top: 25px !important;
+      left:0;
+      right: initial !important;
+      &:after {
+        left: 5px;
+        right: initial !important;
+        transform: rotate(180deg);
+        top: -4px;
+      }
+    }
+  }
+  .farLeft {
+    span.text {
+      right: initial !important;
+      left: 0;
+      &:after {
+        left: 5px !important;
+      }
+    }
+  }
+  .blue {
+    background-color: blue;
+    flex-direction: column-reverse !important;
+  }
+  .ion-autocomplete {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3) !important;
+  }
+  .tag-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    .square {
+      position: absolute;
+      min-width: 20px;
+      height: 20px;
+      z-index: 99999999;
+      display: flex !important;
+      align-items: flex-start;
+      justify-content: flex-start;
+      //background-color: green;
+      flex-direction: column;
+      span.text {
+        background-color: rgba(0, 0, 0, 0.5);
+        text-transform: capitalize;
+        padding: 4px;
+        font-size: 11px;
+        transform: none !important;
+        color: white;
+        position: absolute;
+        min-height: 30px;
+        white-space: nowrap;
+        top: -35px;
+        right: 0;
+        &:after {
+          content: '';
+          width: 0;
+          height: 0;
+          border-left: 3px solid transparent;
+          border-right: 3px solid transparent;
+          border-top: 4px solid rgba(0, 0, 0, 0.5);
+          font-size: 0;
+          line-height: 0;
+          position: absolute;
+          right: 5px;
+          bottom: -4px;
+        }
+      }
+      .tag-pin-new {
+        width: 20px;
+        height: 20px;
+        background-color: rgba(236, 74, 63, 0.5);
+        border-radius: 50%;
+        position: absolute;
+        transform: none !important;
+        bottom: 0;
+        &:after {
+          content: "";
+          background-color: $primary-color;
+          height: 50%;
+          width: 50%;
+          border-radius: 50%;
+          position: absolute;
+          top: 25.4%;
+          left: 26%;
+        }
+      }
+    }
+  }
+  .main-title {
+    top: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .title-container {
+      width: 100%;
+      border-bottom: 1px solid grey;
+      height: 40px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 3%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: white;
+      font-size: 18px;
+    }
+    .proceed-buttons {
+      align-self: flex-end;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex-direction: column;
+      .social-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2%;
+        .social-container {
+          border-radius: 50%;
+          border: 1px solid white;
+          color: white;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 10px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .collapsed-section {
+    align-items: stretch;
+    height: 78%;
+  }
+  .image-holder {
+    width: 100%;
+    background-color: lighten($bottom-nav-bkg, 10%);
+    height: 55%;
+    height: 62%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    left: 0px;
+    .image-frame{
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  .image-holder-anim {
+    transform: translate3d(0px, 20%, 0px);
+    opacity: 1;
+  }
+  .details-section {
+    height: 40%;
+    width: 100%;
+    background-color: $bottom-nav-bkg;
+    position: relative;
+    display: flex;
+    .tag-text{
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      bottom: 23%;
+      transition: all linear 0.3s;
+    }
+    .finish-text {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: 17%;
+    }
+    .add-tag-button {
+      background-color: $primary-color;
+      height: 34px;
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      position: absolute;
+      width: 100%;
+      -webkit-transition: all ease 0.5s;
+      transition: all ease 0.5s;
+    }
+
+    .camera-post-title {
+      font-size: 18px;
+      line-height: 0px;
+      text-align: center;
+      color: white;
+      height: 35px;
+      display: flex;
+      position: relative;
+      margin-bottom: 5px;
+      span.text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+      }
+    }
+    .post-form {
+      position: relative;
+      z-index: 999;
+      height: 100%;
+      width: 100%;
+      .brand-input {
+        width: 100%;
+        position: relative;
+        .main-row {
+          flex-direction: column;
+        }
+        .brand-input-holder {
+          position: relative;
+        }
+        .brand-input-icon {
+          height: 22px;
+          width: 22px;
+          position: absolute;
+          z-index: 9;
+          background-size: cover;
+          background-repeat: no-repeat;
+          bottom: 17px;
+          left: 20px;
+        }
+      }
+      input {
+        color: white;
+        width: 100%;
+        background: transparent;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3) !important;
+        margin: 0 auto;
+        font-size: 16px;
+      }
+      .scroll-view {
+        height: 79%;
+      }
+      ul.outfit-icons {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        li.outfit-button {
+          height: 60px;
+          position: relative;
+          display: flex;
+          margin-bottom: 20px;
+          .item-tick {
+            display: none;
+          }
+          .icon {
+            &.female {
+              .cloth-icon {
+                background-color: $female-color;
+              }
+            }
+            &.male {
+              .cloth-icon {
+                background-color: $male-color;
+              }
+            }
+            border-radius: 5px;
+            height: 60px;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 10px;
+            .cloth-item {
+              width: 48px;
+              height: 48px;
+              position: relative;
+              background-position: center;
+              .cloth-icon {
+                background-repeat: no-repeat;
+                background-size: contain;
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                position: relative;
+                background-position: center;
+                background-size: 70%;
+              }
+            }
+            .icon-description {
+              font-size: 10px;
+            }
+          }
+          .name-of-clothing {
+            font-size: 31px;
+            color: black;
+            width: 70%;
+            display: flex;
+            align-items: center;
+            input {
+              position: relative;
+              top: -12px;
+            }
+          }
+          .delete-item {
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .cross-icon {
+              background: transparent;
+              color: white;
+              font-size: 20px;
+              position: relative;
+              top: -4px;
+
+            }
+          }
+        }
+
+        li.outfit-button.selected {
+          .item-tick {
+            display: block;
+            position: absolute;
+            right: 16%;
+            background-color: $green-tick-color;
+            border-radius: 50%;
+            padding: 0px;
+            height: 18px;
+            width: 18px;
+            text-align: center;
+            top: 4px;
+            z-index: 9;
+            color: white
+          }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,19 @@
+// NEWS GRID
+//------------------------------------------------------------------------//
+
+.news-grid {
+  background-color: $grid-bkg-colour;
+  background-size: cover;
+  bottom: 0;
+  overflow: visible;
+  .scroll {
+    padding: 0 0 60px 0;
+    .row {
+      padding: 5px 0 10% 0;
+    }
+  }
+  .news-grid-holder {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

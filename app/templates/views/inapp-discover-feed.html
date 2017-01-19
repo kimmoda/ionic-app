@@ -1,0 +1,27 @@
+<ion-view hide-back-button="true">
+  <ion-nav-title>
+    <div class="header-icon"></div>
+  </ion-nav-title>
+  <custom-backdrop></custom-backdrop>
+  <ion-content class="news-feed">
+    <div class="row">
+      <a ng-click="viewFeed(item.$id)" ng-repeat="item in newsItems" class="{{::item.class}}">
+        <div class="image-holder" >
+          <div class="title">
+            <div class="main-caption">{{::item.title}}</div>
+            <div class="sub-caption" ng-bind-html="::item.subTitle"></div>
+          </div>
+          <div class="image-template" ng-if="item.isAnimated">
+            <img ng-if="imageHolder1" class="fadeInFeed" ng-src="{{getImage(item)}}" alt="">
+            <img ng-if="imageHolder2" class="fadeInFeed" ng-src="{{getImage(item)}}" alt="">
+          </div>
+          <div class="image-template" ng-if="!item.isAnimated">
+            <img ng-src="{{item.image}}" alt="">
+          </div>
+        </div>
+      </a>
+    </div>
+    <ion-spinner ng-if="!noMoreItemsAvailable" ng-show="loadMoreItems" icon="spiral" class="spinner spinner-ios feed-spinner"></ion-spinner>
+    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="30%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

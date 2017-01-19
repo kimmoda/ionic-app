@@ -1,0 +1,15 @@
+@include keyframes(bounceInLeft) {
+  0% {opacity: 0; -webkit-transform: translate3d(-2000px, 0, 0);}
+  60% {opacity: 1; -webkit-transform: translate3d(30px, 0, 0);}
+  80% {-webkit-transform: translateX(-10px, 0, 0);}
+  100% {-webkit-transform: translateX(0, 0, 0);}
+}
+
+@mixin bounceInLeft($duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(bounceInLeft);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

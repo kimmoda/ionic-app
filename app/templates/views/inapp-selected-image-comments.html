@@ -1,0 +1,60 @@
+<ion-view>
+  <ion-nav-title>
+    {{::navTitle}}
+  </ion-nav-title>
+  <ion-nav-buttons side="left" >
+    <button ng-if="showTempBackButton" ng-click="myGoBack()" class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+  <custom-backdrop></custom-backdrop>
+  <ion-content class="image-item-expanded">
+    <div class="row details-row">
+      <div class="col">
+        <div class="comment-list-section show-details">
+          <div class="list comment-input">
+            <div class="item item-input-inset">
+              <form name="registrForm" ng-submit="addComment(image.comments)">
+                <label class="item-input-wrapper">
+                  <input type="text"  placeholder="Type something" ng-model="image.comments">
+                </label>
+                <button class="button button-primary-full" type="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <ion-list show-delete="shouldShowDelete" can-swipe="listCanSwipe">
+            <ion-spinner ng-if="loadingComments" icon="spiral" class="spinner spinner-ios feed-spinner"></ion-spinner>
+            <ion-item class="comment-list-holder"  ng-repeat="itemComments in comments | orderBy:'createdAt'"
+                      ng-init="user = users.$load(itemComments.user)">
+              <div class="comments-list">
+                <div class="comment-container">
+                  <avatar-holder></avatar-holder>
+                  <div class="main-text" ng-class="{'no-user' : !user.username}">
+                    <div class="user">@{{itemComments.userName}}</div>
+                    <div class="comment">
+                      <p ng-bind-html="itemComments.text"></p>
+                    </div>
+                  </div>
+                  <div class="timestamp">
+                    <i class="icon ion-android-time"></i>
+                    <span am-time-ago="itemComments.timestamp"></span>
+                  </div>
+                </div>
+              </div>
+              <ion-option-button class="button-positive delete-notification" ng-click="deleteItem(itemComments)">
+                <i class="ion-ios-trash-outline cross-icon"></i>
+              </ion-option-button>
+            </ion-item>
+
+          </ion-list>
+
+
+
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

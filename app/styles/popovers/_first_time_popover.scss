@@ -1,0 +1,52 @@
+// FIRST TIME POPOVER
+//------------------------------------------------------------------------//
+
+.first-time-popver-newsfeed {
+  align-items: center;
+  .popup {
+    position: relative;
+    border-radius: 5px;
+    background: #9B9B9B;
+    width: 100%;
+    background-color: transparent;
+    .popup-head {
+      border: none;
+      position: relative;
+      .popup-title {
+        margin: 0;
+        padding: 0;
+        font-size: 26px;
+      }
+    }
+    .popup-body {
+      text-align: center;
+      .title{
+        font-size: 20px;
+      }
+      .image-holder{
+        background: url($first-time-newsfeed);
+        height: 300px;
+
+        background-size: cover;
+        width: 100%;
+        background-repeat: no-repeat;
+      }
+
+    }
+    .popup-buttons {
+      width: 50%;
+      margin: 0 auto;
+      position: relative;
+      .button-primary-full {
+        border-radius: 50px !important;
+        font-size: 12px;
+        line-height: 13px !important;
+      }
+      .button-accent-full {
+        border-radius: 50px !important;
+        font-size: 12px;
+        line-height: 13px !important;
+      }
+    }
+  }
+}

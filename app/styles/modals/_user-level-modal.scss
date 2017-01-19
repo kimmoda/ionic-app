@@ -1,0 +1,50 @@
+// USER LEVEL MODAL
+//------------------------------------------------------------------------//
+
+.user-level-modal{
+	.header-bar{
+		background-color: $primary-color;
+		.ion-android-close{
+		    color: white;
+		    font-size: 22px;
+		    right: 12px;
+		    position: absolute;
+		    top: 11px;
+		    z-index: 9;
+		}
+
+	}
+	.text-content{
+		color: $font-color-content-primary;
+		padding: 20px;
+    strong{
+      font-weight: bold;
+    }
+    section{
+      margin-bottom: 20px;
+      .title{
+        height: 70px;
+        display: flex;
+        .badge-icon{
+          background: url($user-lvl-0-grey);
+          width: 50px;
+          height: 60px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          float: left;
+        }
+
+        h4{
+          color: $font-color-content-secondary;
+          font-size: 16px;
+        }
+      }
+      .description{
+        p{
+          font-size: 11px;
+        }
+      }
+    }
+
+	}
+}

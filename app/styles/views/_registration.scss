@@ -1,0 +1,35 @@
+// REGISTRATION LAYOUT
+//------------------------------------------------------------------------//
+
+.registration-bkg {
+  background: url($main-background);
+  background-size: 100% 100%;
+  position: fixed !important;
+}
+
+.registration {
+  form {
+    margin: -10px 0 0 0;
+  }
+  .main-logo {
+    @include logo-login;
+  }
+  .list-inset {
+    margin: 0 10px;
+    background: transparent;
+    width: 100%;
+  }
+  .form-fields {
+    margin-bottom: 5%;
+  }
+  p.disclaimer {
+    color: white;
+    font-size: 10px;
+    width: 80%;
+    text-align: center;
+    margin: -15px auto 0;
+    a {
+      color: $primary-color;
+    }
+  }
+}

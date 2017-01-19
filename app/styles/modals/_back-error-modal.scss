@@ -1,0 +1,54 @@
+// BACK ERROR MODAL
+//------------------------------------------------------------------------//
+.back-error {
+  background: url($back-error-bkg);
+  background-size: cover;
+  .header-bar {
+    background: transparent;
+    .ion-android-close {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      left: -79%;
+      right: 0;
+      margin: auto;
+      width: 0;
+      top: 15px;
+    }
+    .ion-android-done {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      left: 79%;
+      right: 0;
+      margin: auto;
+      width: 0;
+      top: 15px;
+    }
+  }
+  .text-content {
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    display: flex;
+    color: white;
+    padding: 20px;
+    input[type="text"] {
+      color: white;
+      background-color: transparent;
+      border-bottom: 1px solid $border-light-grey;
+      width: 100%;
+    }
+    input[type="email"] {
+      color: white;
+      background-color: transparent;
+      border-bottom: 1px solid $border-light-grey;
+      width: 100%;
+    }
+    .button-primary-full, .button-accent-full{
+      width: 90%;
+      margin-top: 20px;
+      font-size: 12px;
+    }
+  }
+}

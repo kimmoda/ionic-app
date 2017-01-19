@@ -1,0 +1,23 @@
+[
+    "bower_components/ionic/js/ionic.bundle.js",
+    "bower_components/ngCordova/dist/ng-cordova.js",
+    "bower_components/angular-resource/angular-resource.js",
+    "bower_components/angular-websocket/dist/angular-websocket.js",
+    "bower_components/angular-sanitize/angular-sanitize.js",
+    "bower_components/angularjs-slider/dist/rzslider.js",
+    "custom/tabbedSlideBox/tabSlideBox.js",
+    "bower_components/firebase/firebase.js",
+    "bower_components/angularfire/dist/angularfire.js",
+    "bower_components/angular-toArrayFilter/toArrayFilter.js",
+    "bower_components/angular-animate/angular-animate.js",
+    "bower_components/firebase-util/dist/firebase-util.js",
+    "custom/ion-autocomplete/dist/ion-autocomplete.js",
+    "bower_components/ionic-filter-bar/dist/ionic.filter.bar.js",
+    "custom/angularfire-helper.js",
+    "custom/SQLitePlugin.js",
+    "bower_components/ionic-scroll-sista/dist/ionic.scroll.sista.js",
+    "bower_components/ionic-toast/src/ionic-toast.js",
+    "bower_components/angular-local-storage/dist/angular-local-storage.js",
+    "bower_components/moment/moment.js",
+    "bower_components/angular-moment/angular-moment.js"
+]

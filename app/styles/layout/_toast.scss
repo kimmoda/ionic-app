@@ -1,0 +1,30 @@
+// TOAST MESSAGING
+//------------------------------------------------------------------------//
+
+.ionic_toast {
+    @include fadeInDown($duration: 0.3s, $delay: 0.5s);
+}
+
+.ionic_toast_top {
+  top: 52px !important;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(139,195, 74, 0.9) !important;
+}
+
+
+.ionic_toast_bottom{
+  top: 52px !important;
+  width: 100%  !important;
+  margin: 0  !important;
+  bottom: initial;
+}
+
+.ionic_toast_middle{
+  top: 52px !important;
+  width: 100%  !important;
+  margin: 0  !important;
+  bottom: initial;
+  background-color: #D32F2F !important;
+}
+

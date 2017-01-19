@@ -1,0 +1,158 @@
+// FORMS
+//------------------------------------------------------------------------//
+
+.login, .registration, .reset, .change-password {
+  p.error {
+    color: $font-color-error;
+    font-size: 0.8rem;
+  }
+  span.error {
+    color: $font-color-error;
+    font-size: 0.8rem;
+    width: 10px;
+    span {
+      position: absolute;
+    }
+  }
+  span.success {
+    color: $font-color-success;
+    font-size: 0.8rem;
+    width: 10px;
+    span {
+      position: absolute;
+    }
+  }
+  p.error-message {
+    color: $font-color-error;
+    font-size: 0.8rem;
+    margin: 0;
+    position: absolute;
+    top: 68%;
+    text-align: center;
+    width: 90%;
+  }
+  p.success-message {
+    color: $font-color-success;
+    font-size: 0.8rem;
+    margin: 0;
+    position: absolute;
+    top: 73%;
+    left: 22%;
+    width: 90%;
+  }
+  .item-input {
+    padding: 0px;
+  }
+  .item {
+    position: relative;
+    @include login-input-fields;
+    input {
+      background: transparent;
+      color: white;
+      font-size: 1rem;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #ccc;
+      background: transparent;
+      position: relative;
+    }
+    .item-input {
+      padding: 0 !important;
+      input {
+        background: transparent;
+        color: white;
+        font-size: 1.4rem;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        background: transparent;
+      }
+    }
+    .input-label {
+      display: none;
+    }
+  }
+}
+
+.reset {
+  p.error-message, p.success-message {
+    top: 63%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  p.success-message {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.registration p.error-message {
+  color: #F07164;
+  font-size: 0.8rem;
+  margin: 0 auto;
+  position: reLative;
+  top: -35px;
+  text-align: center;
+  height: 0;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  color: white;
+  font-size: 15px;
+}
+
+::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+:-moz-placeholder {
+  color: #AAAAAA;
+}
+
+:-ms-input-placeholder { /* IE10+ */
+  color: #AAAAAA;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+}
+
+input:-moz-placeholder {
+  color: white;
+}
+
+input:-ms-input-placeholder {
+  color: white;
+}
+
+.ion-autocomplete-container {
+  input::-webkit-input-placeholder {
+    color: $font-color-content-primary;
+  }
+
+  input:-moz-placeholder {
+    color: $font-color-content-primary;
+  }
+
+  input:-ms-input-placeholder {
+    /* IE10+ */
+    color: $font-color-content-primary;
+  }
+}

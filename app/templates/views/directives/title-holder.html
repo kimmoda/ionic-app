@@ -1,0 +1,12 @@
+<div class="title-holder">
+  <div class="username">
+    @{{::user.username}}
+  </div>
+  <span class="description">
+    {{::user.description}}
+  </span>
+  <span class="followers">
+    <span class="followers-count" ng-show="!user.friend">0 followers</span>
+    <span class="followers-count" ng-show="user.friend">{{::(user.friend| toArray :false|filter:query).length }} followers</span>
+  </span>
+</div>

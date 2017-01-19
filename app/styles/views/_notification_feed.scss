@@ -1,0 +1,213 @@
+// NOTIFICATION FEED
+//------------------------------------------------------------------------//
+
+.notification-feed {
+  background-size: cover;
+  bottom: 0;
+  box-shadow: none !important;
+  .scroll {
+    height: 100%;
+    padding: 0;
+  }
+  .list {
+    margin-bottom: 100px;
+  }
+  .no-more-items {
+    height: 190px;
+    position: relative;
+    top: -60px;
+    padding-top: 45px;
+  }
+  .tab-container {
+    top: 52px !important;
+    height: 36px;
+    display: flex;
+    .tab-left {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10px;
+    }
+    .tab-right {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 10px;
+    }
+    .divider {
+      height: 3px;
+      width: 3px;
+      position: relative;
+      background-color: #B3B3B3;
+      top: 17px;
+      border-radius: 50%;
+    }
+    .tab-item {
+      max-width: 50%;
+      position: relative;
+      top: -4px;
+      font-size: 11px;
+      height: 39px;
+      padding-top: 12px;
+      color: $font-color-content-secondary;
+      background-color: white;
+      .tab-text{
+        position: relative;
+      }
+    }
+    .tab-item.active, .tab-item.activated {
+      color: $primary-color;
+      background-color: white;
+    }
+
+  }
+
+  .item {
+    display: flex;
+    background-color: white;
+    border-color: $border-grey;
+    padding: 0;
+    a, .item-holder {
+      display: flex;
+      width: 100%;
+      .avatar-container{
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .avatar-holder {
+          padding: 3px 3px 3px 2px;
+          overflow: visible;
+          height: 44px;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          position: relative;
+          width: 70%;
+          color: $icon-grey;
+          .icon-avatar-placeholder {
+            font-size: 30px;
+          }
+          .avatar-image {
+            border-radius: 50%;
+            width: 40px;
+            height: 41px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0 !important;
+            z-index: 9;
+            border: 1px solid #ddd;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.facebook-image{
+              background-position: center center;
+            }
+            span.profile-avatar-placeholder {
+              position: relative;
+              font-size: 32px;
+              right: 0;
+              margin: auto;
+              width: 27px;
+              color: #DDDDDD;
+              top: 0;
+              left: 0;
+            }
+          }
+        }
+      }
+
+      .click-holder {
+        width: 100%;
+        display: flex;
+        .notification-text {
+          width: 80%;
+          display: flex;
+          font-size: 12px;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          padding-left: 10px;
+          color: $font-color-content-primary;
+          .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            span.user {
+              font-weight: bold;
+              margin-right: 2px;
+              color: $font-color-content-primary;
+              font-size: $title-name;
+            }
+
+          }
+          span.timestamp {
+            font-size: 9px;
+            position: relative;
+            top: 0;
+            color: $font-color-content-primary;
+            right: inherit;
+            bottom: inherit;
+          }
+        }
+        .notication-image {
+          width: 20%;
+          overflow: visible;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 60px;
+          .image {
+            width: 100%;
+            height: 50px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 9;
+            border: 1px solid #ddd;
+            top: initial;
+            left: initial;
+          }
+        }
+      }
+    }
+  }
+
+  // IONIC SWIPE LIST STYLES
+  .item-complex .item-content {
+    padding: 5px;
+
+  }
+  .item-complex.active .item-content {
+    background-color: #F6F6F6 !important;
+    border-color: transparent !important;
+  }
+  .item-complex .item-content {
+    background-color: #FFFFFF !important;
+    border-color: transparent !important;
+  }
+  .item-left-editable .item-content, .item-right-editable .item-content {
+    width: 100%;
+  }
+  .notification-feed .item-right-editable .item-content {
+    width: 100%;
+    padding: 5px;
+  }
+  .delete-notification {
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+  }
+
+  .feed-spinner {
+    top: -70px;
+  }
+}

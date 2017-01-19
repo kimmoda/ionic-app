@@ -1,0 +1,42 @@
+<div class="avatar-holder" ng-if="user.username" ng-click="viewUser(user.$id)">
+  <div ng-if="user.avatar.imageType == null">
+    <div class="avatar-image" style="background-image: url('data:image/jpeg;base64,{{::user.avatar.image}}')">
+      <span ng-hide="user.avatar.image" class="profile-avatar-placeholder">
+        <i class="icon-avatar-placeholder"></i>
+      </span>
+    </div>
+  </div>
+  <div ng-if="user.avatar.imageType == 0">
+    <div class="avatar-image" style="background-image: url('data:image/jpeg;base64,{{::user.avatar.image}}')">
+      <span ng-hide="user.avatar.image" class="profile-avatar-placeholder">
+        <i class="icon-avatar-placeholder"></i>
+      </span>
+    </div>
+  </div>
+  <div ng-if="user.avatar.imageType == 1">
+    <div class="avatar-image facebook-image" ng-style="{'background-image': 'url(' + user.avatar.image + ')'}">
+      <span ng-hide="user.avatar.image" class="profile-avatar-placeholder">
+        <i class="icon-avatar-placeholder"></i>
+      </span>
+    </div>
+  </div>
+  <div ng-if="user.avatar.imageType == 2">
+    <div class="avatar-image" ng-style="{'background-image': 'url(' + user.avatar.image + ')'}">
+      <span ng-hide="user.avatar.image" class="profile-avatar-placeholder">
+        <i class="icon-avatar-placeholder"></i>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="avatar-holder" ng-if="!user.username">
+  <div class="avatar-image">
+    <span class="profile-avatar-placeholder">
+      <i class="icon-avatar-placeholder"></i>
+    </span>
+  </div>
+  <span class="delete-text">
+    Deleted
+    user
+  </span>
+</div>

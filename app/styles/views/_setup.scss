@@ -1,0 +1,464 @@
+// SETUP LAYOUT
+//------------------------------------------------------------------------//
+
+.setupStep1 {
+  background: url($setup-bkg-step-1);
+
+}
+
+.setupStep2 {
+  background: url($setup-bkg-step-2);
+}
+
+.setupStep3 {
+  background: url($setup-bkg-step-3);
+}
+
+.setupStep4 {
+  background: url($setup-bkg-step-4);
+}
+
+.setupStep5 {
+  background: url($setup-bkg-step-5);
+}
+
+.setupStep6 {
+  background: url($setup-bkg-step-6);
+}
+
+.error-bkg{
+  background: url($setup-bkg-step-6);
+  background-repeat: no-repeat;
+  background-size: 160%;
+}
+
+.setup-bkg {
+  background-size: 100% 100%;
+  position: fixed !important;
+  -webkit-transition: 0.3s linear;
+  -moz-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+
+.setup {
+  color: $font-color-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .tester {
+    position: absolute;
+    top: 0;
+    color: white;
+    font-weight: bold;
+    z-index: 9999;
+    font-size: 10px;
+  }
+  .scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+    height: 100%;
+    .main-holder-error {
+      height: 85% !important;
+      .ion-android-sad {
+        font-size: 80px;
+      }
+      h1 {
+        font-size: 17px;
+      }
+      h2 {
+        font-size: 35px;
+      }
+      .heading-text {
+        font-size: 17px;
+        line-height: 32px !important;
+        position: relative;
+        z-index: 1;
+        padding: 0 10px 0 10px;
+        margin: 0 auto;
+        text-align: center;
+        width: 88%;
+      }
+    }
+    .main-holder, .main-holder-error {
+      height: 81%;
+      .item-select {
+        width: 100%;
+        height: 50px;
+        border-bottom: none;
+        background: transparent;
+        color: white;
+        border-radius: 0 !important;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        padding: 0;
+      }
+      .input-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 40px;
+        input {
+          color: white;
+          font-size: 1rem;
+          border-top: none;
+          border-left: none;
+          border-right: none;
+          border-bottom: 1px solid white;
+          background: transparent;
+          position: relative;
+          width: 90%;
+          margin: 0 auto;
+        }
+        span.counter {
+          display: block;
+          position: relative;
+          padding-left: 15px;
+          padding-top: 5px;
+        }
+      }
+      .location {
+        .center-content {
+          border-bottom: 1px solid white;
+          width: 80%;
+          margin: 0 auto;
+          padding: 0;
+          height: 50px;
+        }
+      }
+      .row-bottom {
+        align-items: flex-end;
+        padding: 0 15px 0 15px;
+        height: 80px;
+        position: relative;
+      }
+      .setup-holder {
+        //height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+      }
+      .setup-container {
+        //height: 70%;
+        height: 310px;
+        //background-color: red;
+      }
+      .main-heading {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        span.user {
+          color: $primary-color;
+        }
+
+      }
+      .heading-text {
+        text-align: center;
+        font-size: 17px;
+        line-height: 23px;
+        position: relative;
+        z-index: 1;
+        padding: 0 10px 0 10px;
+        margin: 0 auto;
+        span.user {
+          color: $primary-color;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+      }
+      .body-text {
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 17px;
+        line-height: 23px;
+        position: relative;
+        z-index: 1;
+        padding: 0 10px 0 10px;
+      }
+      .example-text {
+        font-size: 12px;
+        width: 223px;
+        margin: 0 auto;
+        top: 15px;
+        font-weight: bold;
+        line-height: 18px;
+        position: relative;
+        z-index: 1;
+        padding: 0 10px 0 10px;
+        /* font-style: italic; */
+        text-align: center;
+      }
+      .hint-text {
+        text-align: center;
+        width: 85%;
+        font-size: 12px;
+        line-height: 18px;
+        position: relative;
+        z-index: 1;
+        padding: 0 10px 0 10px;
+        margin: 20px auto 0;
+      }
+      .age-range {
+        flex-direction: row;
+        width: 80%;
+        margin: 0 auto;
+        .button-primary-full {
+          width: 98px;
+          margin: 0 auto 8px;
+          height: 98px;
+          text-align: center;
+          padding: 0 5px 0 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          line-height: 0;
+          background-color: transparent;
+          border: 5px solid white;
+          position: relative;
+          span.text{
+            position: relative;
+            margin: 0 auto ;
+          }
+        }
+        .button-primary-full.active {
+          background-color: $primary-color;
+        }
+      }
+      .button-container {
+        text-align: center;
+        .button {
+          border-color: transparent;
+          background-color: transparent;
+          box-shadow: none;
+        }
+      }
+      .sex-icon-button {
+        background-size: cover;
+        width: 97px;
+        height: 96px;
+        margin: 0 auto;
+        padding: 0;
+        .male-icon {
+          height: 90px;
+          width: 90px;
+          margin: 0 auto;
+          border: 5px solid white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .icon-setup-male-icon {
+            font-size: 63px;
+            color: white;
+          }
+        }
+        .female-icon {
+          height: 90px;
+          width: 90px;
+          margin: 0 auto;
+          border: 5px solid white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .icon-setup-female-icon {
+            font-size: 63px;
+            color: white;
+          }
+        }
+      }
+      .sex-icon-button.active {
+        .male-icon {
+          border-color: $primary-color;
+          .icon-setup-male-icon {
+            font-size: 63px;
+            color: $primary-color;
+          }
+        }
+        .female-icon {
+          border-color: $primary-color;
+          .icon-setup-female-icon {
+            font-size: 63px;
+            color: $primary-color;
+          }
+        }
+      }
+      .sex-icon-button.unselected {
+        .male-icon {
+          opacity: 1;
+        }
+        .female-icon {
+          opacity: 1;
+        }
+      }
+      .button-get-started {
+        margin-left: -12px;
+      }
+      .age-number {
+        text-align: center;
+        font-size: 95px;
+        height: 20%;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .brand-scroller {
+        flex-direction: column;
+        width: 100%;
+      }
+      .fashion-container {
+        .scroll-bar-h {
+          right: 2px;
+          bottom: 3px;
+          left: 2px;
+          height: 3px;
+          display: none;
+        }
+        .scroll {
+          padding-bottom: 0;
+        }
+        ul.fashion-list {
+          display: inline-flex;
+          padding-left: 10px;
+          height: 110px;
+          li.fashion-list-item {
+            width: 90px;
+            height: 90px;
+            position: relative;
+            padding-top: 4px;
+            margin-right: 100px;
+            .fashion-brand-icon {
+              background-size: cover;
+              border-radius: 50%;
+              height: 80px;
+              width: 81px;
+              background-repeat: no-repeat;
+            }
+            .name-of-clothing {
+              font-size: 10px;
+              text-align: center;
+              margin-top: 0;
+              width: 80px;
+            }
+          }
+          li.selected {
+            .fashion-brand-icon:after {
+              content: '';
+              position: absolute;
+              top: 3px;
+              left: 0;
+              bottom: 4px;
+              right: -2px;
+              border-radius: 50%;
+              height: 83px;
+              width: 82px;
+              border: 3px solid $primary-color;
+            }
+          }
+        }
+      }
+      .fashion-label-icon {
+        width: 100px;
+        height: 110px;
+        display: inline-block;
+      }
+      .avatar-upload {
+        width: 180px;
+        height: 190px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        .avatar-container {
+          height: 140px;
+          width: 140px;
+          border-radius: 50%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          position: relative;
+          span.text{
+            font-size: 9px;
+            position: absolute;
+            color: grey;
+            top: 61%;
+            display: flex;
+            font-weight: bold;
+            left: 20.5%;
+          }
+          .placeholder {
+            height: 140px;
+            width: 140px;
+            font-size: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid white;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  .bullet-holder {
+    position: relative;
+    bottom: 2%;
+    align-items: flex-end;
+    padding: 0 15px 0 15px;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    ul.bullet-mark {
+      position: absolute;
+      z-index: 9;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 55%;
+      li {
+        background-color: #D7D7D7;
+        width: 15px;
+        height: 15px;
+        float: left;
+        margin-right: 15px;
+        border-radius: 50%;
+      }
+      li.active {
+        background-color: $primary-color;
+      }
+      li:nth-last-child(1) {
+        margin-right: 0;
+        position: relative;
+        top: -2px;
+        height: 18px;
+        width: 21px;
+        background-color: transparent;
+        .icon-setup-icon-pager-tick {
+          font-size: 16px;
+          position: relative;
+          top: 1px;
+          color: #D7D7D7;
+        }
+      }
+
+      li.active:nth-last-child(1) {
+        .icon-setup-icon-pager-tick {
+          color: $primary-color;
+        }
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,30 @@
+<ion-view hide-nav-bar="true" class="error-bkg fadeUpBkg" can-swipe-back="false">
+  <ion-content class="setup">
+    <div class="main-holder-error">
+      <div class="row">
+        <div class="col main-heading">
+          <i class="icon ion-android-sad"></i>
+          <h1>Welcome back to Outfitpic</h1>
+          <h2>There was an error</h2>
+        </div>
+      </div>
+      <div class="setup-holder">
+        <div class="setup-container">
+          <div class="row">
+            <div class="heading-text">
+              Hi <span class="user">{{setupProfile.username}}</span>, there seems to be an error when
+              you tried to setup your profile last time. We apologize for inconvenience and hope you can
+              fill it out again for us.
+            </div>
+          </div>
+          <div class="row row-bottom">
+            <div class="col col-60">
+              <button class="button-block button-primary-full fadeUpNext" ui-sref="setupapp.profile-setup">Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

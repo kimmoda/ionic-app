@@ -1,0 +1,69 @@
+// BASE LAYOUT
+//------------------------------------------------------------------------//
+
+
+body {
+    width: 100%;
+    height: 100%;
+    position: static;
+    cursor: url('http://ionicframework.com/img/finger.png'), auto;
+    font-family: "Roboto";
+    background-color: $base-bkg-color;
+}
+
+input{
+    border-radius: 0px;
+}
+
+input, button {
+    font-family: "Roboto";
+}
+
+a {
+    color: $main-link-color;
+    text-decoration: none;
+    font-family: "Roboto";
+}
+
+ion-tabs.tabs-color-active-positive .tab-item.activated {
+    color: $primary-color;
+}
+
+
+.scroll{
+    padding-bottom: 40px;
+}
+
+.scroll-content {
+    z-index: 1;
+}
+
+.col-offset-5 {
+    margin-left: 5%;
+}
+
+.col-offset-3 {
+    margin-left: 3%;
+}
+
+.loader {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+
+.row-bottom{
+    align-items: center;
+    justify-content: center;
+}
+
+.center-align{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}

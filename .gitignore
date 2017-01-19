@@ -1,0 +1,20 @@
+# NPM COMPONENTS
+node_modules/
+
+# BOWER COMPONENTS
+bower_components/
+!bower_components/ion-autocomplete
+
+# PLATFORM
+platforms/
+.tmp/
+www/
+plugins/
+
+
+# HIDDEN FILES
+.sass-cache
+*.DS_Store
+*.log
+.idea/**
+\\.*

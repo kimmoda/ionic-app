@@ -1,0 +1,72 @@
+<ion-view class="settings" cache-view="false">
+    <custom-backdrop></custom-backdrop>
+    <ion-nav-title>
+        Edit your profile
+    </ion-nav-title>
+    <ion-content scroll-sista="tabs">
+        <div class="row top-row">
+            <div class="row avatar-details">
+                <div class="col-33">
+                </div>
+                <div class="col-33 avatar-container">
+                    <div class="item-avatar" ng-click="showActionSheet()">
+                        <div class="avatar-image" ng-style="{'background-image': 'url( data:image/jpeg;base64,' + profileSetting.avatar.image + ')'}">
+                            <span ng-hide="profileSetting.avatar.image" class="profile-avatar-placeholder">
+                                <i class="icon-avatar-placeholder"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-33">
+                </div>
+            </div>
+            <div class="row instructions">
+                <div class="col-40 instruction-text" ng-click="buttonClicked()">
+                    Please click on the avatar to change your profile picture
+                </div>
+            </div>
+            <div class="cover-mask"></div>
+            <div class="cover-image" ng-style="{'background-image': 'url( data:image/jpeg;base64,' + profileSetting.avatar.image + ')'}"></div>
+        </div>
+        <div class="list profile-list">
+            <div class="item item-icon-left item-icon-right">
+                <i class="icon ion-android-person"></i> Username
+                <span class="item-note" ng-hide="editorName" ng-click="editorName=!editorName">
+                  {{profileSetting.username}}
+                </span>
+                <span class="item-note" ng-show="editorName">
+                  <input class="hidden-input" ng-model="profileSetting.username">
+                  <span class="done-button" ng-click="editorName=!editorName">Done</span>
+                </span>
+            </div>
+            <div class="item item-icon-left item-icon-right">
+                <i class="icon ion-chatbubble-working"></i> Description
+                <span class="item-note" ng-hide="editorDescription" ng-click="editorDescription=!editorDescription">
+                  {{profileSetting.description}}
+                </span>
+                <span class="item-note" ng-show="editorDescription">
+                  <input class="hidden-input" ng-model="profileSetting.description">
+                  <span class="done-button" ng-click="editorDescription=!editorDescription">Done</span>
+                </span>
+            </div>
+
+            <div class="item item-icon-left item-icon-right" ng-if="profileSetting.sex">
+                <i class="icon ion-male" ng-if="profileSetting.sex == 'male'"></i>
+                <i class="icon ion-female" ng-if="profileSetting.sex == 'female'"></i> Sex
+                <span class="item-note" ng-hide="editorSex" ng-click="editorSex=!editorSex">
+                  {{profileSetting.sex}}
+                </span>
+                <span class="item-note" ng-show="editorSex">
+                  <input class="hidden-input" ng-model="profileSetting.sex">
+                  <span class="done-button" ng-click="editorSex=!editorSex">Done</span>
+                </span>
+            </div>
+
+        </div>
+        <div class="row center-align">
+            <div class="col col-60">
+                <button class="button button-block button-primary-full" ng-click="showDeletePopup()">Delete Profile</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

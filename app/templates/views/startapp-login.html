@@ -1,0 +1,75 @@
+<ion-view hide-nav-bar="true" class="login-bkg">
+  <ion-content class="padding login" ng-controller="LoginController">
+    <a class="back-button-text-arrow" ng-if="!showTempBackButton" ng-click="resetForm();$ionicGoBack(); ">
+      <i class="icon ion-ios-arrow-back"></i>
+        <span class="text">
+            Back
+        </span>
+    </a>
+    <a class="back-button-text-arrow" ng-if="showTempBackButton" ng-click="myGoBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+        <span class="text">
+            Back
+        </span>
+    </a>
+    <div class="row">
+      <div class="col">
+        <div class="main-logo"></div>
+      </div>
+    </div>
+    <div class="row row-center">
+      <form class="main-form" name="myform" ng-submit="login()" autocomplete="off" novalidate>
+        <div class="col col-90 form-fields">
+          <div class="list list-inset">
+            <div class="input-avatar-icon">
+              <i class="icon ion-android-person"></i>
+            </div>
+            <label class="item item-input item-floating-label">
+              <input type="email" name="email" placeholder="Email Address" ng-model="user.email" validateEmail
+                     ng-pattern="EMAIL_REGEXP" ng-model-options="{ updateOn: 'blur' }" ng-maxlength="60" maxlength="60"
+                     ng-required="true" required>
+                <span class="error" ng-show="myform.email.$touched && myform.email.$invalid">
+                    <span ng-show="myform.email.$error.required">Email is required.</span>
+                    <span ng-show="myform.email.$error.pattern && !myform.email.$error.maxlength">Invalid email address.</span>
+                    <span ng-show="myform.email.$error.maxlength">Maximum characters is 30.</span>
+                </span>
+            </label>
+            <div class="input-lock-icon"></div>
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Password</span>
+              <input type="password" name="password" placeholder="Password" ng-minlength="4" ng-model="user.password"
+                     ng-required="true">
+                <span class="error" ng-show="myform.password.$touched && myform.password.$invalid">
+                    <span ng-show="myform.password.$error.required">Password is required.</span>
+                    <span ng-show="myform.password.$error.minlength"> Minimum characters is 4.</span>
+                </span>
+            </label>
+          </div>
+        </div>
+        <p class="error-message" ng-show="message"
+           ng-hide="myform.password.$error.required || myform.password.$error.minlength">
+          {{errorMessage}}
+        </p>
+        <div class="col col-80 col-offset-10">
+          <button class="button button-block button-signup" type="submit" ng-disabled="myform.$invalid">Login</button>
+        </div>
+      </form>
+    </div>
+    <div class="row row-bottom login-account-btn">
+      <div class="col text-align-center">
+        <a ui-sref="startapp.forgotpassword">
+          <div class="login-holder">
+            Forgotten Password?
+            <div class="circle-arrow">
+              <i class="icon ion-android-arrow-forward"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+        <div class="row row-center">
+            <span class="timestamp">Test Branch - Build No. 00010 built: {{date | date:'medium'}}</span>
+        </div>
+    </ion-content>
+</ion-view>

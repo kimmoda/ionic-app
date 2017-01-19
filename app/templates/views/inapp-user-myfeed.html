@@ -1,0 +1,42 @@
+<ion-view class="profile">
+  <custom-backdrop></custom-backdrop>
+  <ion-nav-title>
+    <div class="header-icon"></div>
+  </ion-nav-title>
+  <ion-content scroll-sista="tabs">
+    <div class="content">
+      <div class="top-section">
+        <div class="row top-row">
+          <profile-details-holder class="profile-holder"></profile-details-holder>
+        </div>
+        <div class="cover-mask"></div>
+        <div class="cover-image" ng-style="{'background-image': 'url( data:image/jpeg;base64,' + data.avatar.image + ')'}"></div>
+      </div>
+      <div class="tab-container">
+        <a class="tab-item" ui-sref="inapp.myfeed.selected-user.wardrobe" ui-sref-active="active">
+          <span class="count" ng-hide="data.wardrobe">0</span>
+          <span class="count" ng-hide="!data.wardrobe">{{(data.wardrobe| toArray :false|filter:query).length }}</span>
+        <span class="description">
+          Wardrobe
+        </span>
+        </a>
+        <a class="tab-item" ui-sref="inapp.myfeed.selected-user.outfits" ui-sref-active="active">
+          <span class="count" ng-hide="data.posts">0</span>
+          <span class="count" ng-hide="!data.posts">{{(data.posts| toArray :false|filter:query).length }}</span>
+        <span class="description">
+          Outfits
+        </span>
+        </a>
+        <a class="tab-item" ui-sref="inapp.myfeed.selected-user.likes" ui-sref-active="active">
+          <span class="count" ng-hide="data.likedPost">0</span>
+          <span class="count" ng-hide="!data.likedPost">{{(data.likedPost| toArray :false|filter:query).length }}</span>
+        <span class="description">
+          Likes
+        </span>
+        </a>
+      </div>
+      <div class="gallery-holder" style="height:{{progress}}px">
+        <ion-nav-view name="userProfileTabs"></ion-nav-view>
+      </div>
+  </ion-content>
+</ion-view>

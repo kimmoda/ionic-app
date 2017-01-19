@@ -1,0 +1,68 @@
+<ion-modal-view class="topic-modal-view">
+  <ion-header-bar class="header-bar">
+    <div class="avatar-holder">
+      <div class="avatar-image"
+           style="background-image: url('data:image/jpeg;base64,{{::selectedUser.avatar.image}}')"></div>
+      <span ng-hide="selectedUser.avatar.image" class="profile-avatar-placeholder">
+        <i class="icon-avatar-placeholder"></i>
+      </span>
+    </div>
+    <h1 class="title">
+      {{selectedUser.username}}
+    </h1>
+    <i class="icon ion-android-close" ng-click="closeModal()"></i>
+  </ion-header-bar>
+  <ion-content class="text-content">
+    <div class="row">
+      <img ng-src="data:image/jpeg;base64,{{selectedImage.image}}" alt="">
+    </div>
+    <div class="details-holder">
+      <div class="like-indicator" ng-class="{'active' : selectedImage.comments}" ng-click="showCommentField(post.$id)">
+        <i class="icon ion-ios-chatbubble"></i>
+        <span class="count" ng-hide="selectedImage.comments == null">
+          <span class="number">{{(selectedImage.comments| toArray : false|filter:query).length}}</span>
+        </span>
+      </div>
+      <div class="like-indicator" ng-class="{'active' : selectedImage.downVote}" ng-click="downVote(selectedImage)">
+        <i class="icon ion-sad-outline"></i>
+        <span class="count" ng-hide="selectedImage.downVote == null">
+            <span class="number">{{(selectedImage.downVote| toArray : false|filter:query).length}}</span>
+        </span>
+      </div>
+      <div class="like-indicator" ng-class="{'active' : selectedImage.upVote}" ng-click="upVote(selectedImage)">
+        <i class="icon ion-happy-outline"></i>
+        <span class="count" ng-hide="selectedImage.upVote == null">
+          <span class="number">{{(selectedImage.upVote| toArray : false|filter:query).length}}</span>
+        </span>
+      </div>
+    </div>
+    <div class="row topic-post-text">
+      {{selectedImage.topicPost}}
+
+    </div>
+
+
+    <div class="row">
+      <div class="comments-list">
+        <div class="comment-container" ng-repeat="item in comments | orderBy:'-timestamp'"
+             ng-init="commentUser = users.$load(item.user)">
+          <div class="avatar-holder">
+            <div class="avatar-image"
+                 style="width: 40px; height: 40px; background-image: url('data:image/jpeg;base64,{{::commentUser.avatar.image}}')"></div>
+                  <span ng-hide="commentUser.avatar.image" class="profile-avatar-placeholder">
+                    <i class="icon-avatar-placeholder"></i>
+                  </span>
+          </div>
+          <div class="main-text">
+            <div class="user">@{{item.userName}}</div>
+            <div class="comment">{{item.text}}</div>
+          </div>
+          <div class="timestamp">
+            <i class="icon ion-android-time"></i>
+            <span am-time-ago="item.timestamp"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

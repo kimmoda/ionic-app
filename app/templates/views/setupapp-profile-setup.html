@@ -1,0 +1,280 @@
+<ion-view hide-nav-bar="true" class="setup-bkg fadeUpBkg"
+          ng-class="{setupStep1:setupStart, setupStep2:setupDescription, setupStep3:setupAge, setupStep4:setupBrand,
+                     setupStep5:setupAvatar, setupStep6:setupLocation}"
+          can-swipe-back="false">
+  <ion-content class="setup">
+    <div class="main-holder">
+      <div class="row">
+        <div class="col main-heading">
+          <h1>Welcome to Outfitpic</h1>
+        </div>
+      </div>
+      <div ng-if="setupStart" class="setup-holder">
+        <div class="setup-container">
+          <div class="row">
+            <div class="heading-text">
+              We are getting your account set up, in the meantime <span class="user">{{setupProfile.username}}</span>
+              tell us
+              about yourself so that we can personalise the Outfitpic experience for you...
+            </div>
+          </div>
+          <div class="row">
+            <div class="body-text">
+              I am a...
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-50 button-container" ng-model="user">
+              <button ng-class="{'active': isActiveMale, 'unselected': isActiveFemale }" ng-click="selectMale()"
+                      class="button sex-icon-button">
+                <div class="male-icon">
+                  <i class="icon-setup-male-icon"></i>
+                </div>
+              </button>
+            </div>
+            <div class="col-50 button-container">
+              <button ng-class="{'active': isActiveFemale, 'unselected': isActiveMale }" ng-click="selectFemale()"
+                      class="button sex-icon-button">
+                <div class="female-icon">
+                  <i class="icon-setup-female-icon"></i>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row row-bottom">
+          <div class="col col-60">
+            <button class="button-block button-primary-full fadeUpNext" ng-if="user.sex"
+                    ng-click="showSetupDescription()">Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <div ng-if="setupDescription" class="setup-holder">
+        <div class="setup-container">
+          <div class="row">
+            <div class="heading-text">
+              Let's create a short Bio for you, please describe in one sentence a statement which
+              best describes you and your fashion style
+            </div>
+          </div>
+          <div class="row">
+            <div class="example-text">
+              e.g. I am a fashion blogger with an obsession for vintage clothing
+            </div>
+          </div>
+          <div class="row">
+            <div class="col input-container">
+              <input type="text" placeholder="Enter text here..." ng-model="user.description" maxlength="50"
+                     ng-maxlength="50"/>
+              <span class="counter">{{user.description.length || 0}}/50</span>
+            </div>
+          </div>
+        </div>
+        <div class="row row-bottom">
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-click="showSetupStart()">
+              Back
+            </button>
+          </div>
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-disabled="!user.description"
+                    ng-click="showSetupAge()">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <div ng-if="setupAge" class="setup-holder">
+        <div class="setup-container">
+          <div class="row">
+            <div class="heading-text">
+              We are nearly finished personalising your account...Hold old are you?
+            </div>
+          </div>
+          <div class="row">
+            <div class="body-text">
+              Please select one
+            </div>
+          </div>
+          <div class="row age-range">
+            <button class="button-block button-primary-full button-fade-up"
+                    ng-class="{'active': range1Active, 'unselected': range1Unactive }" ng-click="addAge(1)">
+              <span class="text">16 - 25</span>
+
+            </button>
+            <button class="button-block button-primary-full button-fade-up"
+                    ng-class="{'active': range2Active, 'unselected': range2Unactive }" ng-click="addAge(2)">
+              <span class="text">26 - 35</span>
+            </button>
+          </div>
+          <div class="row age-range">
+            <button class="button-block button-primary-full button-fade-up"
+                    ng-class="{'active': range3Active, 'unselected': range3Unactive }" ng-click="addAge(3)">
+              <span class="text">36 - 45</span>
+            </button>
+            <button class="button-block button-primary-full button-fade-up"
+                    ng-class="{'active': range4Active, 'unselected': range4Unactive }" ng-click="addAge(4)">
+              <span class="text">45+</span>
+            </button>
+          </div>
+
+
+        </div>
+        <div class="row row-bottom">
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-click="showSetupDescription()">
+              Back
+            </button>
+          </div>
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-disabled="!user.ageRange"
+                    ng-click="showSetupBranding()">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <div ng-if="setupBrand" class="setup-holder">
+        <div class="setup-container">
+          <div class="row">
+            <div class="heading-text">
+              Tell us about the brands you like...
+            </div>
+          </div>
+          <div class="row">
+            <div class="body-text">
+              Tap the brand logo to select
+            </div>
+          </div>
+          <div class="row brand-scroller">
+            <ion-scroll direction="x" class="fashion-container wide-as-needed">
+              <ul class="fashion-list" style="width: {{deviceWidth}}px">
+                <li ng-repeat="item in brandlist" class="fashion-list-item" ng-class="{'selected':item.selected}"
+                    ng-click="addItemToggle(item)">
+                  <div class="fashion-brand-icon"
+                       style="background-image: url('./images/brand-icon-{{item.brandIcon}}.png');">
+                  </div>
+                  <div class="name-of-clothing">
+                    {{item.brandName}}
+                  </div>
+                </li>
+              </ul>
+            </ion-scroll>
+            <ion-scroll direction="x" class="fashion-container wide-as-needed">
+              <ul class="fashion-list" style="width: {{deviceWidth}}px">
+                <li ng-repeat="item in brandlist" class="fashion-list-item" ng-class="{'selected':item.selected}"
+                    ng-click="addItemToggle(item)">
+                  <div class="fashion-brand-icon"
+                       style="background-image: url('./images/brand-icon-{{item.brandIcon}}.png');">
+                  </div>
+                  <div class="name-of-clothing">
+                    {{item.brandName}}
+                  </div>
+                </li>
+              </ul>
+            </ion-scroll>
+          </div>
+        </div>
+        <div class="row row-bottom">
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-click="showSetupAge()">
+              Back
+            </button>
+          </div>
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-disabled="likesLength == 0"
+                    ng-click="showSetupAvatar()">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <div ng-if="setupAvatar" class="setup-holder">
+        <div class="setup-container">
+          <div class="row">
+            <div class="heading-text">
+              Would you like to upload a profile picture?
+            </div>
+          </div>
+          <div class="row">
+            <div class="hint-text">
+              HINT: This can be done at a later stage, if ever you wish to upload a profile picture
+              or even change your profile picture it can be found in your Profile section
+            </div>
+          </div>
+          <div class="row center-content">
+            <div class="avatar-upload">
+              <div class="avatar-container" ng-click="showActionSheet()"
+                   ng-style="{'background-image': 'url( data:image/jpeg;base64,' + setupProfile.avatar.image + ')'}">
+                <div ng-if="!setupProfile.avatar.image" class="placeholder">
+                                <span class="text">
+                                  Click here to upload
+                                </span>
+                  <i class="icon-avatar-placeholder"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-bottom">
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-click="showSetupBranding()">
+              Back
+            </button>
+          </div>
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-click="showSetupLocation()">
+              <span ng-if="!setupProfile.avatar.image">Do this later</span>
+              <span ng-if="setupProfile.avatar.image">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div ng-if="setupLocation" class="setup-holder location">
+        <div class="setup-container">
+          <div class="row">
+            <div class="heading-text">
+              Last step and we are ready to go!...
+            </div>
+          </div>
+          <div class="row">
+            <div class="body-text">
+              Which country do you live in?
+            </div>
+          </div>
+          <div class="row center-content">
+            <select class="item item-input item-select" ng-model="user.destination"
+                    ng-init="user.destination=countries[0]" ng-options="country.name for country in countries"></select>
+          </div>
+        </div>
+        <div class="row row-bottom">
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-click="showSetupAvatar()">
+              Back
+            </button>
+          </div>
+          <div class="col col-50">
+            <button class="button-block button-primary-full button-fade-up" ng-click="upload()">
+              Finish
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row bullet-holder">
+        <ul class="bullet-mark">
+          <li
+            ng-class="{'active': setupStart || setupDescription || setupAge || setupBrand || setupAvatar || setupLocation}"></li>
+          <li ng-class="{'active': setupDescription || setupAge || setupBrand || setupAvatar || setupLocation}"></li>
+          <li ng-class="{'active': setupAge || setupBrand || setupAvatar || setupLocation}"></li>
+          <li ng-class="{'active': setupBrand || setupAvatar || setupLocation}"></li>
+          <li ng-class="{'active': setupAvatar || setupLocation}"></li>
+          <li ng-class="{'active': setupLocation}">
+            <i class="icon-setup-icon-pager-tick"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

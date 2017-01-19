@@ -1,0 +1,69 @@
+// USER PROFILE IMAGE
+//------------------------------------------------------------------------//
+.user-profile-image {
+  background: rgba(0, 0, 0, 0.9);
+  .header-bar {
+    background: transparent;
+    .username{
+      color: white;
+      font-size: 18px;
+      top: 7px;
+      position: relative;
+      left: 0;
+    }
+    .close-button{
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      right: 5px;
+      border: 1px solid white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 9px;
+      .ion-android-close {
+        color: white;
+        font-size: 20px;
+      }
+    }
+
+  }
+  .image-frame {
+    margin-top: 0;
+    display: flex;
+    color: white;
+    padding: 0;
+    flex-direction: column;
+    img{
+      width: 100%;
+      height: 0%;
+      padding: 10px;
+      border: 1px solid white;
+    }
+  }
+  .col-50{
+    text-align: center;
+  }
+  .button-primary-full, .button-accent-full{
+    width: 90%;
+    margin-top: 20px;
+    font-size: 14px;
+    .ion-ios-camera {
+      color: white;
+      font-size: 26px;
+      margin: auto;
+      &:before{
+        font-size: 40px;
+      }
+    }
+    .ion-image {
+      color: white;
+      font-size: 26px;
+      margin: auto;
+      &:before{
+        font-size: 30px;
+      }
+    }
+  }
+}

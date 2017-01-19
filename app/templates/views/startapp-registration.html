@@ -1,0 +1,85 @@
+<ion-view hide-nav-bar="true" class="registration-bkg">
+  <ion-content class="padding registration" ng-controller="RegistrationController" scroll-handle="your-scroll-handle">
+    <a class="back-button-text-arrow" ng-if="!showTempBackButton" ng-click="resetForm();$ionicGoBack(); ">
+      <i class="icon ion-ios-arrow-back"></i>
+        <span class="text">
+            Back
+        </span>
+    </a>
+    <a class="back-button-text-arrow" ng-if="showTempBackButton" ng-click="myGoBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+        <span class="text">
+            Back
+        </span>
+    </a>
+
+    <div class="row">
+      <div class="col">
+        <div class="main-logo"></div>
+      </div>
+    </div>
+    <form class="main" name="myform" ng-submit="register()" autocomplete="off" novalidate>
+      <div class="row form-fields">
+        <div class="list list-inset">
+          <div class="input-avatar-icon">
+            <i class="icon ion-android-person"></i>
+          </div>
+          <label class="item item-input">
+            <ion-spinner ng-if="checkUsernameSpinner" icon="spiral" class="spinner spinner-ios check-username-spinner "></ion-spinner>
+            <input type="text" name="username" placeholder="Username" ng-model="user.username"
+                   ng-pattern="/^[a-zA-Z0-9-_]*$/" ng-minlength="5" ng-maxlength="20" maxlength="20" ng-required="true"
+                   ng-blur="checkUsername(myform.username)"
+                   ng-click="clearUsernameField()"
+                   required username-validator>
+                        <span class="error" ng-show="usernameTaken">
+                          <span >Username is taken.</span>
+                        </span>
+                        <span class="success" ng-show="usernameIsUnique">
+                          <span >Username is good</span>
+                        </span>
+                        <span class="error" ng-show="myform.username.$touched && myform.username.$invalid">
+                          <span ng-show="myform.username.$error.required">Username Required.</span>
+                            <span ng-show="myform.username.$error.pattern && !myform.username.$error.maxlength">No Special characters are allowed.</span>
+                            <span ng-show="myform.username.$error.maxlength">Maximum characters is 20.</span>
+                            <span ng-show="myform.username.$error.minlength && !myform.username.$error.pattern">Username too short.</span>
+                        </span>
+          </label>
+          <div class="input-email-icon"></div>
+          <label class="item item-input">
+            <input type="email" name="email" placeholder="Email Address" ng-model="user.email" validateEmail
+                   ng-pattern="EMAIL_REGEXP" ng-maxlength="60" maxlength="60" ng-required="true">
+                        <span class="error" ng-show="myform.email.$touched && myform.email.$invalid">
+                            <span ng-show="myform.email.$error.required">Email is required.</span>
+                        <span ng-show="myform.email.$error.pattern && !myform.email.$error.maxlength">Invalid email address.</span>
+                        <span ng-show="myform.email.$error.maxlength">Maximum characters is 60.</span>
+                        </span>
+          </label>
+          <div class="input-lock-icon"></div>
+          <label class="item item-input">
+            <input type="password" name="password" placeholder="Passcode" ng-minlength="4" ng-model="user.password"
+                   ng-required="true" ng-click="clearConfirmPassword()">
+                        <span class="error" ng-show="myform.password.$touched && myform.password.$invalid">
+                            <span ng-show="myform.password.$error.required">Password is required.</span>
+                        <span ng-show="myform.password.$error.minlength"> Minimum characters is 4.</span>
+                        </span>
+          </label>
+          <div class="input-lock-icon"></div>
+          <label class="item item-input">
+            <input type="password" ng-model="user.verify" placeholder="Confirm Passcode" nx-equal-ex="user.password"
+                   name="verify" ng-required="true">
+            <span class="error" ng-show="myform.verify.$error.nxEqualEx">Passwords must match</span>
+          </label>
+        </div>
+      </div>
+      <p class="error-message" ng-show="message">{{errorMessage}}</p>
+      <p class="disclaimer">By creating your account you are agreeing to general <a ng-click="modal.show()">Terms</a>
+        and <a ng-click="modal.show()">Privacy Policy</a></p>
+      <div class="row create-account-btn">
+        <div class="col col-80 col-offset-10">
+          <button class="button button-block button-signup" type="submit" ng-disabled="myform.$invalid">Create Account
+          </button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

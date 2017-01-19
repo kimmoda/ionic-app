@@ -1,0 +1,16 @@
+<ion-view class="connections" hide-back-button="true">
+  <custom-backdrop></custom-backdrop>
+  <ion-nav-title>
+    <div class="header-icon"></div>
+  </ion-nav-title>
+  <ion-content>
+    <ion-spinner ng-if="!noMoreItemsAvailable" ng-show="loadMoreItems" icon="spiral" class="spinner spinner-ios feed-spinner"></ion-spinner>
+    <div class="no-more-items">
+      <i class="icon ion-person-stalker"></i>
+      No suggested followers
+    </div>
+    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+
+

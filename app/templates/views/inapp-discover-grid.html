@@ -1,0 +1,71 @@
+<ion-view cache-view="false" hide-back-button="showBackButton()">
+  <custom-backdrop></custom-backdrop>
+  <ion-nav-title>
+    {{::navTitle}}
+  </ion-nav-title>
+  <ion-nav-buttons side="left" >
+    <button ng-if="showTempBackButton" ng-click="myGoBack()" class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <div class="back-to-top" id="top-button" ng-click="scrollToTop()">
+      <i class="icon ion-android-arrow-up"></i>
+    </div>
+    <div class="header-grid-switch" ng-click="changeGridToggle()">
+      <i ng-if="!isGridActive" class="icon ion-grid"></i>
+      <i ng-if="isGridActive" class="icon ion-ios-list-outline"></i>
+    </div>
+  </ion-nav-buttons>
+
+  <ion-content class="news-grid" id="content" on-scroll="gotScrolled()">
+
+    <div class="row news-grid-holder" ng-class="{'condensed': isGridActive, 'expanded': !isGridActive}">
+      <div class="grid-container" ng-repeat="post in items | toArray :false | filter: { visible: true }" ng-init="user = users.$load(post.user)">
+        <div class="news-grid-post">
+          <div class="item item-details">
+            <avatar-holder></avatar-holder>
+            <title-holder class="title-container"></title-holder>
+            <div class="add-user" ng-hide="user.$id == userId" ng-click="addFriend(user.$id)" ng-class="{'already-added' : checkIfUserHasBeenAdded(user)}">
+              <i class="icon ion-android-person-add"></i>
+            </div>
+          </div>
+          <div class="item item-image">
+            <a ng-click="viewImage(post)">
+              <div class="title">
+                <span class="sub-caption" ng-class="{'no-tags': post.tags == null}">{{::post.itemTitle}}</span>
+                <span class="tags">
+                  <ul>
+                    <li ng-repeat="brands in post.tags">
+                      {{::brands.itemDescription.join(', ')}}
+                    </li>
+                  </ul>
+                </span>
+                <div class="tag-icon" ng-if="post.tags">
+                  <div class="tag-pin">
+                    <span class="number">
+                        {{::(post.tags| toArray : false|filter:query).length }}
+                    </span>
+                  </div>
+                  <div class="camera-icon"></div>
+                </div>
+              </div>
+              <div class="image-holder-frame" ng-style="{'background-image': 'url( data:image/jpeg;base64,' + post.image + ')'}"></div>
+              <ion-spinner icon="spiral" ng-if="!post.image" class="spinner spinner-ios item-spinner"></ion-spinner>
+            </a>
+          </div>
+          <social-icons-holder></social-icons-holder>
+        </div>
+      </div>
+    </div>
+
+    <ion-spinner ng-if="!noMoreItemsAvailable" ng-show="loadMoreItems" icon="spiral" class="spinner spinner-ios feed-spinner"></ion-spinner>
+
+    <div class="no-more-items" ng-show="noMorePlaceholder">
+      No more images
+    </div>
+
+    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>

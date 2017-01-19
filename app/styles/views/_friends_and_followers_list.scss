@@ -1,0 +1,194 @@
+// FRIENDS & FOLLOWERS LIST
+//------------------------------------------------------------------------//
+
+.friends-list, .followers-list {
+    background-size: cover;
+    bottom: 0;
+    box-shadow: none !important;
+    .scroll{
+        height: 100%;
+      padding:0;
+    }
+    .list{
+      margin-bottom: 100px;
+    }
+    .no-more-items {
+      height: 190px;
+      position: relative;
+    }
+    .tab-container{
+        top: 52px !important;
+        height: 36px;
+        display: flex;
+        .tab-left{
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 10px;
+        }
+        .tab-right{
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 10px;
+        }
+        .divider{
+            height: 3px;
+            width: 3px;
+            position: relative;
+            background-color: #B3B3B3;
+            top: 17px;
+            border-radius: 50%;
+        }
+        .tab-item{
+            max-width: 50%;
+            position: relative;
+            top: -4px;
+            font-size: 11px;
+            height: 39px;
+            padding-top: 12px;
+            color: $font-color-content-secondary;
+            background-color: white;
+        }
+        .tab-item.active, .tab-item.activated{
+            color: $primary-color;
+            background-color: white;
+        }
+
+    }
+
+
+    .item{
+      display: flex;
+      background-color: white;
+      border-color: $border-grey;
+      padding: 0;
+      a, .item-holder {
+        display: flex;
+        width: 100%;
+        .avatar-container{
+          width: 15%;
+          .avatar-holder {
+            width: 100%;
+            padding: 3px 3px 3px 2px;
+            overflow: visible;
+            height: 51px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: $icon-grey;
+            .icon-avatar-placeholder{
+              font-size: 30px;
+            }
+            .avatar-image {
+              border-radius: 50%;
+              width: 40px;
+              height: 41px;
+              background-size: cover;
+              background-repeat: no-repeat;
+              position: relative;
+              left: 0 !important;
+              z-index: 9;
+              border: 1px solid #ddd;
+              top: initial;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+
+        .click-holder{
+          width: 100%;
+          display: flex;
+          .notification-text {
+            width: 80%;
+            display: flex;
+            font-size: 12px;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            padding-left: 10px;
+            color: $font-color-content-primary;
+            .main-content{
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              span.user {
+                font-weight: bold;
+                margin-right: 2px;
+                color: $font-color-content-primary;
+                font-size: 14px;
+              }
+              span.followers{
+                color: $font-color-content-primary;
+                margin-right: 2px;
+                font-size: 10px;
+              }
+
+            }
+            span.timestamp{
+              font-size: 9px;
+              position: relative;
+              top: 0;
+              color: $font-color-content-primary;
+              right: inherit;
+              bottom: inherit;
+            }
+          }
+          .notication-image {
+            width: 20%;
+            overflow: visible;
+            //height: 51px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            .image {
+              width: 100%;
+              height: 50px;
+              background-size: cover;
+              background-repeat: no-repeat;
+              position: relative;
+              z-index: 9;
+              border: 1px solid #ddd;
+              top: initial;
+              left: initial;
+            }
+          }
+        }
+        .arrow-icon{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 21px;
+          color: #C0BDBD;
+        }
+      }
+    }
+
+    // IONIC SWIPE LIST STYLES
+    .item-complex .item-content{
+      padding: 5px;
+
+    }
+    .item-complex.active .item-content{
+      background-color:#F2F2F2 !important;
+      border-color: transparent !important;
+    }
+    .item-complex .item-content{
+      background-color: #FFFFFF !important;
+      border-color: transparent !important;
+    }
+    .item-left-editable .item-content, .item-right-editable .item-content{
+      width: 100%;
+    }
+    .notification-feed .item-right-editable .item-content {
+      width: 100%;
+      padding: 5px;
+    }
+    .delete-notification{
+      display: flex;
+      justify-content: center;
+      font-size: 23px;
+    }
+}

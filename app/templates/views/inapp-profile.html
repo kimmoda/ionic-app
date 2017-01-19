@@ -1,0 +1,45 @@
+<ion-view class="profile">
+  <ion-content scroll-sista="tabs">
+    <custom-backdrop></custom-backdrop>
+
+    <div class="top-section">
+      <div class="row top-row">
+        <profile-details-holder class="profile-holder"></profile-details-holder>
+      </div>
+      <div class="cover-mask"></div>
+      <div class="cover-image" ng-if="imageType == 0"
+           ng-style="{'background-image': 'url( data:image/jpeg;base64,' + data.avatar.image + ')'}"></div>
+      <div class="cover-image" ng-if="imageType == 1"
+           ng-style="{'background-image': 'url(' + data.avatar.image + ')'}"></div>
+      <div class="cover-image" ng-if="imageType == 2"
+           ng-style="{'background-image': 'url(' + data.avatar.image + ')'}"></div>
+
+    </div>
+    <div class="tab-container">
+      <a class="tab-item" ui-sref="inapp.profile.wardrobe" ui-sref-active="active">
+        <span class="count" ng-hide="wardrobe">0</span>
+        <span class="count" ng-hide="!wardrobe">{{(wardrobe| toArray :false).length }}</span>
+        <span class="description">
+          Wardrobe
+        </span>
+      </a>
+      <a class="tab-item" ui-sref="inapp.profile.outfits" ui-sref-active="active">
+        <span class="count" ng-hide="posts">0</span>
+        <span class="count" ng-hide="!posts">{{(posts| toArray :false).length }}</span>
+        <span class="description">
+          Outfits
+        </span>
+      </a>
+      <a class="tab-item" ui-sref="inapp.profile.likes" ui-sref-active="active">
+        <span class="count" ng-hide="likedPost">0</span>
+        <span class="count" ng-hide="!likedPost">{{(likedPost| toArray :false).length }}</span>
+        <span class="description">
+          Likes
+        </span>
+      </a>
+    </div>
+    <div class="gallery-holder" style="height:{{progress}}px">
+      <ion-nav-view name="mainProfileTabs"></ion-nav-view>
+    </div>
+  </ion-content>
+</ion-view>

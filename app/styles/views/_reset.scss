@@ -1,0 +1,38 @@
+// RESET PASSWORD LAYOUT
+//------------------------------------------------------------------------//
+
+.reset-bkg {
+    background: url($main-background);
+    background-size: 100% 100%;
+    position: fixed !important;
+}
+
+.reset {
+    .reset-text {
+        color: $font-color-white;
+        text-align: center;
+        margin: 0 auto;
+        width: 80%;
+        font-size: 14px;
+    }
+    .main-logo {
+        @include logo-login;
+    }
+    .main-form {
+        @include fadeIn($duration: 0.3s, $delay: 0.5s);
+    }
+    .list-inset {
+        margin: 0px 10px;
+        background: transparent;
+        width: 100%;
+    }
+    .form-fields {
+        margin-bottom: 5%;
+    }
+    .forgotten-password-align {
+        text-align: center;
+    }
+    .button-default {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,47 @@
+<ion-modal-view class="tag-icons">
+    <ion-header-bar class="header-bar" ng-click="closeModal(2)">
+        <h1 class="title">Select items of clothing</h1>
+        <i class="icon ion-android-close"></i>
+    </ion-header-bar>
+    <ion-content >
+      <div class="row switch-row">
+        <div class="sex female" ng-class="{'inactive': sex}">
+          <i class="ion-female"></i>
+          Female
+        </div>
+        <ion-toggle ng-model="sex" ng-change="toggleChange()"></ion-toggle>
+        <div class="sex male" ng-class="{'inactive': !sex}">
+          Male
+          <i class="ion-male"></i>
+        </div>
+      </div>
+      <div class="row">
+      <ul class="outfit-icons row female-fix" ng-show="!sex">
+            <li class="outfit-button" ng-repeat="item in womensClothing" ng-click="ToggleItem(item, $index)">
+                <div class="item-tick">
+                    <i class="ion-android-done"></i>
+                </div>
+                <div class="icon" >
+                    <span class="cloth-item cloth-icon" style="background-image: url('./images/cloth-item-female-{{item.itemIcon}}.png');"></span>
+                </div>
+                <div class="name-of-clothing">
+                    {{item.itemName}}
+                </div>
+            </li>
+        </ul>
+       <ul class="outfit-icons row male " ng-show="sex">
+          <li class="outfit-button" ng-repeat="item in mensClothing" ng-click="ToggleItem(item, $index)">
+            <div class="item-tick">
+              <i class="ion-android-done"></i>
+            </div>
+            <div class="icon" >
+              <span class="cloth-item cloth-icon" style="background-image: url('./images/cloth-item-male-{{item.itemIcon}}.png');"></span>
+            </div>
+            <div class="name-of-clothing">
+              {{item.itemName}}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </ion-content>
+</ion-modal-view>

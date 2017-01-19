@@ -1,0 +1,23 @@
+<ion-view class="settings">
+    <custom-backdrop></custom-backdrop>
+    <ion-nav-title>
+        Privacy Settings
+    </ion-nav-title>
+    <ion-content>
+      <div class="list">
+        <div class="item item-divider privacy-description">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque cupiditate,
+          delectus illo impedit molestiae nesciunt nobis pariatur repudiandae rerum?
+        </div>
+        <ion-toggle ng-model="privacyWardrobe.checked" ng-change="privacySettingsChange(1)">
+          Wardrobe
+        </ion-toggle>
+        <ion-toggle ng-model="privacyOutfits.checked" ng-change="privacySettingsChange(2)">
+          Outfits
+        </ion-toggle>
+        <ion-toggle ng-model="privacyLikes.checked" ng-change="privacySettingsChange(3)">
+          Likes
+        </ion-toggle>
+      </div>
+    </ion-content>
+</ion-view>

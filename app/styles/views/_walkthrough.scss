@@ -1,0 +1,98 @@
+// WALKTHROUGH LAYOUT
+//------------------------------------------------------------------------//
+
+.walkthrough {
+    background: $primary-color;
+    color: $font-color-white;
+    .scroll {
+        height: 100%;
+    }
+    .slider-holder {
+        height: 100%;
+        padding: 0px;
+        width: 100%;
+        .slider-icon {
+            @include fadeIn($duration: 0.3s, $delay: 0.5s);
+            margin-top: -20%;
+        }
+    }
+    .slider {
+        text-align: center;
+        overflow: visible;
+        height: 100%;
+        width: 100%;
+        .slider-slides {
+            position: absolute;
+            height: 100%;
+            z-index: 1;
+            display: table;
+            .slider-slide {
+                position: relative;
+                float: none;
+                height: 100%;
+                display: table-cell;
+                vertical-align: middle !important;
+            }
+            .slide-container {
+                width: 100%;
+                .heading-text {
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    margin-top: 30px;
+                }
+                .body-text {
+                    font-size: 14px;
+                    width: 77%;
+                    margin: 25px auto;
+                }
+            }
+            .slide-1 {
+                background: url($walkthrough-slide-0);
+                background-size: cover;
+            }
+            .slide-2 {
+                background: url($walkthrough-slide-1);
+                background-size: cover;
+            }
+            .slide-3 {
+                background: url($walkthrough-slide-2);
+                background-size: cover;
+            }
+            .slide-4 {
+                background: url($walkthrough-slide-3);
+                background-size: cover;
+            }
+            .slide-5 {
+                background: url($walkthrough-slide-4);
+                background-size: cover;
+            }
+        }
+        .slider-pager {
+            position: absolute;
+            bottom: 20px;
+            z-index: 2;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+            width: 105px;
+            .slider-pager-page {
+                color: #D7D7D7;
+            }
+            .slider-pager-page.active {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.slider-pager .slider-pager-page {
+    color: #D7D7D7;
+    opacity: 1;
+}
+
+.slider-pager .slider-pager-page.active {
+    -webkit-transition: opacity 0.4s ease-in;
+    transition: opacity 0.4s ease-in;
+    opacity: 1;
+    color: $primary-color;
+}

@@ -1,0 +1,169 @@
+// CONNECTIONS FEED
+//------------------------------------------------------------------------//
+
+.connections {
+  // background-color: $grid-bkg-colour;
+  background-size: cover;
+  bottom: 0px;
+  box-shadow: none !important;
+  .scroll {
+    height: 100%;
+  }
+  [nav-view-transition="ios"][nav-view-direction="forward"]{
+    background-color: transparent !important;
+  }
+  [nav-view-transition="ios"][nav-view-direction="back"] {
+    background-color: transparent !important;
+  }
+  .item{
+    display: flex;
+    background-color: white;
+    //border-color: $border-grey;
+    border-bottom: 1px solid #F1F1F1;
+    padding: 0;
+    flex-direction: column;
+    .item-content{
+      padding: 0;
+      a, .item-holder {
+        display: flex;
+        width: 100%;
+        .avatar-holder {
+          width: 100%;
+          padding: 3px 3px 3px 2px;
+          overflow: visible;
+          height: 51px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          span.profile-avatar-placeholder {
+            position: absolute;
+            font-size: 32px;
+            left: 2px;
+            right: 0;
+            margin: auto;
+            width: 32px;
+            top: 5px;
+            color: $icon-grey;
+          }
+          .avatar-image {
+            border-radius: 50%;
+            width: 40px;
+            height: 41px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 9;
+            border: 1px solid #ddd;
+            top: 3px;
+            left: 5px;
+          }
+        }
+        .notification-text {
+          width: 60%;
+          display: flex;
+          font-size: $comment-text;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          padding-left: 10px;
+          color: $font-color-content-primary;
+          .main-content{
+            display: flex;
+            flex-wrap: wrap;
+            span.user {
+              font-weight: bold;
+              margin-right: 2px;
+              color: $font-color-content-primary;
+              font-size: $title-name;
+            }
+
+          }
+          span.timestamp{
+            font-size: 9px;
+            position: relative;
+            top: 0;
+            color: $font-color-content-primary;
+            right: inherit;
+            bottom: inherit;
+          }
+        }
+        .buttons {
+          width: 25%;
+          overflow: visible;
+          height: 51px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 35px;
+          .ion-checkmark-circled{
+            color: $primary-color;
+          }
+          .icon {
+            margin: 5px;
+          }
+        }
+      }
+      .user-image-examples{
+        display: flex;
+        flex-direction: row;
+        padding-left: 10px;
+        padding-top: 5px;
+        .bottom-images{
+          width: 25.3333%;
+          height: 74px;
+          .image {
+            width: 100%;
+            height: 65px;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .connections-badge{
+    background-color: #387ef5;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    z-index:3;
+    top: 10px;
+    margin: auto;
+    left: 0;
+    right: 30.5%;
+    border-radius: 50%;
+    color: white;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .explore-tabs{
+    height: 66px;
+    a{
+      display: flex;
+      flex-direction: column;
+      position: relative !important;
+      top: 5px !important;
+      padding-top: 0 !important;
+      height: 60px !important;
+    }
+  }
+
+  .no-more-items {
+    padding-top: 40px;
+    flex-direction: column;
+    width: 40%;
+    display: flex;
+    background-color: red;
+    margin: 0 auto;
+    background: none;
+    .icon{
+      font-size: 40px;
+    }
+  }
+
+}

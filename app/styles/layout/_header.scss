@@ -1,0 +1,321 @@
+// HEADER
+//------------------------------------------------------------------------//
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar,
+[nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+  background-color: $primary-color;
+  .title {
+    color: $header-nav-font;
+  }
+}
+
+.bar.bar-positive {
+  border-color: $primary-color;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+}
+
+// Header Back button
+span.back-text {
+  span.default-title {
+    display: none !important;
+  }
+}
+
+.back-button {
+  top: 3px !important;
+  .ion-ios-arrow-back {
+    color: white;
+  }
+}
+
+.button .icon {
+  vertical-align: top;
+  pointer-events: none;
+  position: relative;
+  top: -1px;
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+  height: 52px;
+
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
+  margin-top: 14px;
+}
+
+[nav-bar-transition="ios"] [nav-bar="active"] .bar .title{
+  right:0 !important;
+  left:0 !important;
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .has-header, .platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
+  top: 52px;
+}
+
+.header-icon {
+  background: url($logo-header);
+  width: 30px;
+  height: 23px;
+  z-index: 11;
+  position: absolute;
+  background-repeat: no-repeat;
+
+  left: 0;
+  right: 0;
+  top: 20%;
+  background-size: contain;
+  margin: auto;
+}
+
+.icon-settings-icon {
+  font-size: 21px;
+  left: -2px;
+  position: relative;
+  top: -2px;
+}
+
+.header-grid-switch {
+  display: block;
+  position: absolute;
+  font-size: 27px;
+  z-index: 11;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  top: 3px;
+  color: white;
+  text-align: center;
+  .ion-grid {
+    font-size: 29px;
+  }
+}
+
+.header-grid-switch-profile {
+  display: block;
+  position: absolute;
+  font-size: 27px;
+  z-index: 11;
+  width: 30px;
+  height: 30px;
+  right: 35px;
+  top: 3px;
+  color: white;
+  text-align: center;
+  .ion-grid {
+    font-size: 29px;
+  }
+  &.already-added{
+    right: 0;
+  }
+}
+
+
+.header-image-button {
+  z-index: 11;
+  font-size: 21px !important;
+  color: white !important;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  height: 31px;
+  display: flex;
+  padding: 0 !important;
+  .ion-android-more-vertical:before {
+    font-size: 28px !important;
+  }
+}
+
+
+
+//.header-search-button {
+//  z-index: 11;
+//  font-size: 21px !important;
+//  color: white !important;
+//  position: absolute;
+//  right: 0;
+//  top: 2px;
+//  height: 31px;
+//  display: flex;
+//  padding: 0 !important;
+//  .ion-android-search:before {
+//    font-size: 28px !important;
+//  }
+//}
+
+.header-delete-notification {
+  z-index: 11;
+  font-size: 21px !important;
+  color: white !important;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+  height: 31px;
+  display: flex;
+  padding: 0 !important;
+  .ion-ios-trash-outline:before {
+    font-size: 28px !important;
+  }
+}
+
+
+
+.header-settings-button {
+  z-index: 11;
+  font-size: 21px !important;
+  color: white !important;
+  position: absolute;
+  right: 0;
+  top: 4px;
+  height: 31px;
+  display: flex;
+  padding: 0 !important;
+}
+
+.back-to-top {
+  display: block;
+  position: absolute;
+  font-size: 27px;
+  z-index: 11;
+  width: 30px;
+  height: 30px;
+  right: 35px;
+  top: 3px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transition: 0.2s linear all;
+}
+
+.back-top-top-anim {
+  opacity: 1;
+}
+
+.bar .button.button-icon .icon:before,
+.bar .button.button-icon:before,
+.bar .button.button-icon.icon-left:before,
+.bar .button.button-icon.icon-right:before {
+  vertical-align: top;
+  font-size: 30px;
+  line-height: 32px;
+}
+
+.filter-bar {
+  position: fixed;
+  width: 100%;
+  height: 44px;
+  z-index: 12;
+  .bar.bar-stable {
+    background-color: $primary-color;
+    height: 60px !important;
+    padding-bottom: 12px;
+  }
+  .item-input-wrapper {
+    margin-top: 16px !important;
+  }
+  .bar-stable .button.button-clear {
+    color: white;
+    font-size: 14px;
+    top: 2px;
+  }
+  .filter-bar-search {
+    padding-top: 8px;
+    color: $font-color-content-primary;
+  }
+}
+
+.social-links {
+  right: -2px;
+  position: relative;
+  top: 3px;
+  background: transparent;
+  border: none;
+  .share-icon {
+    position: relative;
+    top: -7px;
+    .ion-android-more-vertical {
+      top: 5px;
+      color: white;
+      position: relative;
+      &:before{
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+.report-links {
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+  background: transparent;
+  border: none;
+  width: 50px;
+  .report-icon {
+    position: relative;
+    top: -7px;
+    .ion-android-alert {
+      font-size: 27px;
+      color: white;
+    }
+  }
+}
+
+.back-link {
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+  background: transparent;
+  border: none;
+  width: 50px;
+  .back-icon {
+    position: relative;
+    top: -7px;
+    left: -15px;
+    .ion-ios-arrow-back {
+      font-size: 32px;
+      color: white;
+      top: -4px;
+      position: relative;
+    }
+  }
+}
+
+.nav-bar-title {
+  font-weight: 100;
+}
+
+.add-user-button {
+  display: block;
+  position: absolute;
+  font-size: 27px;
+  z-index: 11;
+  width: 30px;
+  height: 30px;
+  right: 0px;
+  top: 3px;
+  color: white;
+  text-align: center;
+  .ion-android-person-add {
+    font-size: 27px;
+  }
+  &.already-added{
+    display: none;
+  }
+}
+
+
+
+// back arrow
+.custom-back-arrow{
+  position: absolute;
+  background-color: green;
+  height: 40px;
+}
+
+// hack to make left button on top of header title
+.buttons-left{
+  z-index: 9999;
+}

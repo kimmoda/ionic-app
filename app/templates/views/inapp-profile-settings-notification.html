@@ -1,0 +1,16 @@
+<ion-view class="settings">
+    <custom-backdrop></custom-backdrop>
+    <ion-nav-title>
+        Notifications Settings
+    </ion-nav-title>
+    <ion-content>
+      <div class="list">
+        <div class="item item-divider">
+          Notifications
+        </div>
+        <ion-toggle ng-model="pushNotification.checked" ng-change="pushNotificationChange()">
+          Allow push notifications
+        </ion-toggle>
+      </div>
+    </ion-content>
+</ion-view>

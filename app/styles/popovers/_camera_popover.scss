@@ -1,0 +1,41 @@
+// CAMERA POPOVER 
+//------------------------------------------------------------------------//
+
+.camera-popver {
+    align-items: flex-end;
+    .popup{
+        background-color: transparent !important;
+        position: relative;
+        top: -59px;
+        left: 15px;
+        .popup-head{
+            border: none;
+            position: relative;
+        }
+        .popup-buttons{
+            width: 173px;
+            margin: 0 auto;
+            position: relative;
+            .button.button-stable {
+                border-color: transparent;
+                background-color: $primary-color;
+                color: white;
+                border-radius: 50%;
+                height: 53px;
+                margin-right: 20px;
+            }
+            .button.close-button {
+                margin-right: 0px;
+                display: block;
+                position: absolute;
+                top: 66px;
+                left: 47px;
+                border-color: transparent;
+                background-color: $primary-color;
+                color: white;
+                border-radius: 50%;
+                height: 53px;
+            }
+        }
+    }
+}

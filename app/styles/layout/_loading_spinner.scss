@@ -1,0 +1,140 @@
+// LOADING SPINNER
+//------------------------------------------------------------------------//
+
+.loading-container {
+  @include fadeIn($duration: 0.3s, $delay: 0.5s);
+  .loading {
+    position: relative;
+    padding: 20px;
+    border-radius: 5px;
+    //background-color: $primary-color !important;
+    background-image: url($loading-bkg);
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    .spinner svg {
+      width: 80%;
+      height: 80%;
+      stroke: white;
+      fill: white;
+    }
+    .main-loader{
+      .loading{
+        background: none;
+      }
+    }
+
+  }
+
+  .header-icon {
+    opacity: 0.4;
+    top: 19px;
+  }
+  .logo-loader {
+    background-image: url($logo-loader);
+    height: 112px;
+    width: 108px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 27%;
+    right: 0;
+    margin: auto;
+  }
+
+}
+
+.feed-spinner {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 20px;
+  z-index: 9999999;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  svg {
+    width: 28px;
+    height: 28px;
+    stroke: $primary-color;
+    fill: $primary-color;
+  }
+}
+
+.item-spinner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 33%;
+  z-index: 9999999;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  svg {
+    stroke: $primary-color;
+    fill: $primary-color;
+  }
+}
+
+.condensed{
+  .item-spinner {
+    svg{
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.expanded{
+  .item-spinner {
+    svg{
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+.tips {
+  @include fadeInUp($duration: 0.3s, $delay: 0.5s);
+  width: 182px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -35%;
+  height: 60px;
+  left: 0px;
+  right: 0;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  .icon {
+    position: absolute;
+    left: -20px;
+    font-size: 17px;
+  }
+}
+
+
+ion-infinite-scroll .spinner{
+  display: none;
+}
+
+
+.check-username-spinner {
+  position: absolute;
+  right: 0;
+  z-index: 9999999;
+  svg {
+    width: 28px;
+    height: 28px;
+    stroke: $primary-color;
+    fill: $primary-color;
+  }
+}

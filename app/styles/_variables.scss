@@ -1,0 +1,154 @@
+// VARIABLES
+//------------------------------------------------------------------------//
+
+// COLOR
+//--------------------------------//
+// BASE BKG COLOR
+$base-bkg-color: #3B3B3B;
+$grid-bkg-colour: #F1F1F1;
+$notification-unread: #F8F4F4;
+
+// COLOUR SCHEME
+$primary-color: #EC4A3F;
+$secondary-color: #E85D57;
+$accent-color: #3B3B3B;
+$blue-color: #F8F4F4;
+$bullet-color: #D7D7D7;
+$green-tick-color: #48BE5F;
+$male-color: #33629F;
+$female-color: #DB2B6F;
+
+// BORDER
+$border-grey: #ddd;
+$border-light-grey: #F8F4F4;
+
+// ICONS
+$icon-dark: #3B3B3B;
+$icon-idle: #b2b2b2;
+$icon-light: #E4E2E2;
+$icon-grey: #DDDDDD;
+$icon-star: #ffc900;
+$icon-chat: #3B3B3B;
+$icon-light-primary: lighten(#EC4A3F, 10%);
+
+// FONT STYLING
+//--------------------------------//
+// FONT COLOURS
+$font-color-white: #FFFFFF;
+$font-color-error: #F07164;
+$font-color-success: #48BE5F;
+$font-color-content-primary: #3B3B3B;
+$font-color-content-secondary: #A9A9A9;
+$font-color-accent: #E85D57;
+
+// FONT SIZE
+$font-button-size: 16px;
+$title-name: 13px;
+$comment-text: 12px;
+
+// LINK COLOURS
+$main-link-color: #FFFFFF;
+
+// COMPONENT STYLING
+//--------------------------------//
+// HEADER
+$header-nav-icon: #FFFFFF;
+$header-nav-font: #FFFFFF;
+
+// BOTTOM NAV
+$bottom-nav-bkg: #3B3B3B;
+$bottom-nav-icon: #FFFFFF;
+$bottom-nav-font: #FFFFFF;
+
+// PROFILE
+$profile-scroll-bkg: #F0F1F3;
+$profile-img-footer: #FFFFFF;
+
+
+// SPACES & MARGINS
+//--------------------------------//
+$spacing-bottom: 50px;
+
+// ICONS
+//--------------------------------//
+
+// REGISTRATION ICONS
+$input-avatar: "../images/input-avatar-icon.png";
+$input-lock: "../images/input-lock-icon.png";
+$input-email: "../images/input-email-icon.png";
+
+// FOOTER ICONS
+$bottom-nav-camera: "../images/bottom-nav-camera.png";
+
+// SETUP ICONS
+$setup-bkg-step-1: "../images/setup-bkg-step-1.jpg";
+$setup-bkg-step-2: "../images/setup-bkg-step-2.jpg";
+$setup-bkg-step-3: "../images/setup-bkg-step-3.jpg";
+$setup-bkg-step-4: "../images/setup-bkg-step-4.jpg";
+$setup-bkg-step-5: "../images/setup-bkg-step-5.jpg";
+$setup-bkg-step-6: "../images/setup-bkg-step-6.jpg";
+
+// IMAGERY
+$main-background: "../images/registration-bkg-new.jpg";
+$logo-login: "../images/logo-registration";
+$logo-header: "../images/header-icon.png";
+$logo-loader: "../images/logo-loading-beta.png";
+
+// WALKTHROUGH ICONS
+$walkthrough-icon-slide-0: "../images/walkthrough-icon-slide-0.png";
+$walkthrough-icon-slide-1: "../images/walkthrough-icon-slide-1.png";
+$walkthrough-icon-slide-2: "../images/walkthrough-icon-slide-2.png";
+$walkthrough-icon-slide-3: "../images/walkthrough-icon-slide-3.png";
+$walkthrough-icon-slide-4: "../images/walkthrough-icon-slide-4.png";
+$walkthrough-slide-0: "../images/walkthrough-slide-0.jpg";
+$walkthrough-slide-1: "../images/walkthrough-slide-1.jpg";
+$walkthrough-slide-2: "../images/walkthrough-slide-2.jpg";
+$walkthrough-slide-3: "../images/walkthrough-slide-3.jpg";
+$walkthrough-slide-4: "../images/walkthrough-slide-4.jpg";
+
+// PLACEHOLDER IMAGES
+$no-more-items: "../images/no-more-items.png";
+
+// TEAM IMAGE
+$team-naresh: "../images/team-naresh.png";
+$team-steph: "../images/team-steph.png";
+$team-patrick: "../images/team-patrick.png";
+$team-dan: "../images/team-dan.png";
+
+// TEAM IMAGE
+$loading-bkg: "../images/loading-bkg.jpg";
+
+// FIRST TIME IMAGES
+$first-time-newsfeed: "../images/first-time-news-feed.png";
+
+// POPOVER BKG
+$popover-bkg-share: "../images/popover-bkg-share.jpg";
+$popover-icon-share: "../images/popover-icon-share.png";
+$popover-bkg-user: "../images/popover-bkg-user.jpg";
+$popover-icon-user: "../images/popover-icon-user.png";
+$popover-bkg-wifi: "../images/popover-bkg-wifi.jpg";
+$popover-icon-wifi: "../images/popover-icon-wifi.png";
+$popover-bkg-notification: "../images/popover-bkg-notification.jpg";
+$popover-icon-notification: "../images/popover-icon-notification.png";
+$popover-bkg-error: "../images/popover-bkg-error.jpg";
+$popover-icon-error: "../images/popover-icon-error.png";
+$popover-bkg-delete-user: "../images/popover-bkg-delete-user.jpg";
+$popover-icon-delete-user: "../images/popover-icon-delete-user.png";
+$popover-bkg-add-user: "../images/popover-bkg-add-user.jpg";
+$popover-icon-add-user: "../images/popover-icon-add-user.png";
+$popover-icon-delete-image: "../images/popover-icon-delete-image.png";
+
+
+// DELETE APP BKG
+$delete-app-bkg: "../images/delete-app-bkg.jpg";
+
+// BACK ERROR BKG
+$back-error-bkg: "../images/back-error-bkg.jpg";
+
+// USER LEVEL ICONS
+$user-lvl-0: "../images/user-level-icon.png";
+$user-lvl-0-grey: "../images/user-level-icon-grey.png";
+
+// DELETED IMAGE ICON
+$deleted-image-icon:  "../images/delete-image-icon.png";
+

@@ -1,0 +1,34 @@
+<div class="delete-screen fade" ng-if="post.$id == imageDeleteKey">
+  <div class="text" ng-click="deleteItem(post.$id)">
+    Delete item?
+    <i class="ion-ios-trash-outline cross-icon"></i>
+  </div>
+  <div class="background-cancel" on-tap="removeDeleteScreen()"></div>
+</div>
+
+
+<div class="delete-screen fade" ng-if="likes.imageKey == imageDeleteKey">
+  <div class="text" ng-click="deleteItem(likes.imageKey)">
+    Delete item?
+    <i class="ion-ios-trash-outline cross-icon"></i>
+  </div>
+  <div class="background-cancel" on-tap="removeDeleteScreen()"></div>
+</div>
+
+
+<div class="delete-screen fade" ng-if="outfits.imageKey == imageDeleteKey">
+  <div class="text" ng-click="deleteItem(outfits.imageKey)">
+    Delete item?
+    <i class="ion-ios-trash-outline cross-icon"></i>
+  </div>
+  <div class="background-cancel" on-tap="removeDeleteScreen()"></div>
+</div>
+
+
+<div class="delete-screen fade" ng-if="wardrobe.imageKey == imageDeleteKey">
+  <div class="text" ng-click="deleteItem(wardrobe.imageKey)">
+    Delete item?
+    <i class="ion-ios-trash-outline cross-icon"></i>
+  </div>
+  <div class="background-cancel" on-tap="removeDeleteScreen()"></div>
+</div>

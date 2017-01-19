@@ -1,0 +1,104 @@
+<ion-view class="profile" hide-back-button="hideBackButton">
+  <ion-nav-title>
+    <div class="header-icon"></div>
+  </ion-nav-title>
+  <ion-nav-buttons side="left" >
+    <button ng-if="showTempBackButton" ng-click="myGoBack()" class="button back-button buttons button-clear custom-back-arrow">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <div class="header-grid-switch-profile" ng-class="{'already-added' : checkIfUserIsFriend(data)}" ng-click="changeGridToggle()">
+      <i ng-if="!isGridActive" class="icon ion-grid"></i>
+      <i ng-if="isGridActive" class="icon ion-ios-list-outline"></i>
+    </div>
+    <div class="add-user-button" ng-click="addFriend()" ng-class="{'already-added' : checkIfUserIsFriend(data)}">
+      <i class="icon ion-android-person-add"></i>
+    </div>
+  </ion-nav-buttons>
+  <ion-content scroll="false" style="padding-bottom: 300px; position:relative;" >
+    <div class="not-a-friend-icon" ng-hide="data.viewWardrobe" ng-if="!checkIfUserIsFriend(data)">
+      <i class="icon ion-android-alert"></i>
+      Only friends of this user can see their posts
+    </div>
+    <div ng-if="checkIfUserIsFriend(data) || data.viewWardrobe">
+      <div class="row news-grid-holder condensed" ng-class="{'condensed': isGridActive, 'expanded': !isGridActive}">
+        <div class="grid-container" ng-repeat="post in wardrobeItems" ng-init="wardrobe = imageCache.$load(post.$id)">
+          <div class="news-grid-post">
+            <div class="item item-details" ng-init="user = users.$load(post.userId)">
+              <avatar-holder></avatar-holder>
+              <title-holder class="title-container"></title-holder>
+            </div>
+            <div class="item item-image">
+              <a ng-click="viewImage(wardrobe.imageKey)">
+                <div class="title">
+                  <span class="sub-caption" ng-class="{'no-tags': wardrobe.tags == null}">{{::wardrobe.itemTitle}}</span>
+                    <span class="tags">
+                      <ul>
+                        <li ng-repeat="post in wardrobe.tags">
+                          {{::post.itemDescription.join(', ')}}
+                        </li>
+                      </ul>
+                    </span>
+                  <div class="tag-icon" ng-if="wardrobe.tags">
+                    <div class="tag-pin">
+                      <span class="number">
+                          {{::(wardrobe.tags| toArray : false|filter:query).length }}
+                      </span>
+                    </div>
+                    <div class="camera-icon"></div>
+                  </div>
+                </div>
+                <div class="image-holder-frame" ng-style="{'background-image': 'url( data:image/jpeg;base64,' + wardrobe.image + ')'}"></div>
+              </a>
+            </div>
+            <div class="item item-social">
+              <div class="details-holder">
+                <div class="like-indicator chat-icon" ng-class="{'active' : wardrobe.comments}" ng-click="viewCommentsList(wardrobe)">
+                  <i class="icon ion-ios-chatbubble"></i>
+                  <div class="like-description">
+                    Say something
+                  </div>
+                  <span class="count chat-count" ng-hide="wardrobe.comments == null">
+                    <span class="number">{{(wardrobe.comments| toArray : false|filter:query).length}}</span>
+                  </span>
+                </div>
+                <div class="like-indicator" ng-class="{'active' : wardrobe.upVote}" ng-click="upVote(wardrobe, user)">
+                  <i class="icon ion-android-star"></i>
+                  <div class="like-description">
+                    Favourited by:
+                  </div>
+                  <span class="count like-count" ng-hide="wardrobe.upVote == null">
+                      <span class="number">{{(wardrobe.upVote| toArray : false|filter:query).length}}</span>
+                  </span>
+                </div>
+                <div class="like-indicator" ng-class="{'active' : wardrobe.wardrobeRef}" ng-click="addToWardrobe(wardrobe, user)">
+                  <i class="icon-myfeed-icon"></i>
+                  <div class="like-description">
+                    Hanged by:
+                  </div>
+                  <span class="count wardrobe-count" ng-hide="wardrobe.wardrobeRef == null">
+                    <span class="number">{{(wardrobe.wardrobeRef| toArray : false|filter:query).length}}</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <ion-spinner ng-if="!noMoreWardrobeItems && data.wardrobe" icon="spiral"
+                     class="spinner spinner-ios feed-spinner"></ion-spinner>
+        <div class="no-more-items-font-icon" ng-hide="data.wardrobe">
+          <i class="icon icon-myfeed-icon"></i>
+          No wardrobe items
+        </div>
+        <div class="no-more-items-font-icon" ng-show="noMoreWardrobePlaceholder && data.wardrobe">
+          <i class="icon icon-myfeed-icon"></i>
+          No more wardrobe items
+        </div>
+      </div>
+      <ion-infinite-scroll ng-if="!noMoreWardrobeItems" on-infinite="loadMoreWardrobe()" distance="1%"></ion-infinite-scroll>
+    </div>
+  </ion-content>
+</ion-view>

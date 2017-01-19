@@ -1,0 +1,52 @@
+<ion-view hide-nav-bar="true">
+<ion-content scroll="false" class="login">
+<!-- remove for after testing -->
+<div class="battery-bar"></div>
+
+<div class="row">
+  <div class="col">
+    <div class="main-logo"></div>
+  </div>
+</div>
+<div class="row row-center">
+    <form class="main-form" name="myform"
+      ng-submit="login()"
+      autocomplete="off"
+      novalidate>
+        <div class="col col-90 form-fields">
+          <div class="list list-inset">
+            <div class="input-avatar-icon"></div>
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Username</span>
+              <input type="email" placeholder="Username" ng-model="user.email" ng-required="true">
+            </label>
+            <div class="input-lock-icon"></div>
+            <label class="item item-input item-floating-label">
+              <span class="input-label">Password</span>
+              <input type="password" placeholder="Password" ng-model="user.password" ng-required="true">
+            </label>
+          </div>
+        </div>
+        <div class="col col-80 col-offset-10">
+          <button class="button button-block button-default" type="submit" ng-click="identifyUser(); pushRegister()">Login</button>
+        </div>
+    </form>
+</div>
+
+<div class="row row-center">  
+  <div class="col">
+    <div class="forgotten-password-align">
+      <a href="#/reset">Forgotten your password?</a>
+    </div>
+  </div>
+</div>
+
+<div class="row row-bottom login-account-btn">
+    <div class="col col-80 col-offset-10">
+      <a href="#/register"><button class="button button-block button-create">Create Account</button></a>
+    </div>
+</div>
+
+
+</ion-content>
+</ion-view>

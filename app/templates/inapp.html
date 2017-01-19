@@ -1,0 +1,40 @@
+
+<ion-tabs cache-view="false" class="tabs-icon-top tabs-color-active-positive" ng-controller="TabsController">
+
+  <!-- Newsfeed Tab -->
+  <ion-tab title="Discover" class="discoverfeed-tab"  ng-click="gotoDiscoverFeed()" icon-on="icon-discover-feed-icon" icon-off="icon-discover-feed-icon" ui-sref="inapp.discover-feed">
+    <ion-nav-view name="mainNewsfeed"></ion-nav-view>
+  </ion-tab>
+
+  <!-- My Feed -->
+  <ion-tab title="Friend Zone" class="myfeed-tab"  ng-click="gotoMyFeed()" icon-on="icon-myfeed-icon" icon-off="icon-myfeed-icon" ui-sref="inapp.myfeed.grid">
+    <ion-nav-view name="myFeedMain"></ion-nav-view>
+  </ion-tab>
+
+  <div class="image-button fadeUploadImage" ng-controller="CameraController" ng-if="isCameraBtnActive" ng-click="getImage(0)">
+    <i class="icon ion-image"></i>
+  </div>
+
+  <div class="camera-button fadeUploadCamera" ng-controller="CameraController" ng-if="isCameraBtnActive" ng-click="getImage(1)">
+    <i class="icon ion-camera"></i>
+  </div>
+
+  <!-- Camera Tab -->
+  <ion-tab  title="Camera" class="camera-tab"  ng-class="{'tabs-item-hide': isCameraBtnActive}" ng-click="uploadImageToggle()" icon-on="footer-camera-icon" icon-off="footer-camera-icon">
+  </ion-tab>
+
+  <!-- Notifications -->
+  <div class="notification-badge fade" ng-if="notificationMessageBadge">
+    {{notificationMessageBadge}}
+  </div>
+
+  <ion-tab title="Activites" class="notifications-tab" ng-click="gotoActivites()"   icon-on="icon-notification-icon" icon-off="icon-notification-icon" ui-sref="inapp.activities.notification">
+    <ion-nav-view name="activitiesFeed"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Profile Tab -->
+  <ion-tab title="Profile" class="settings-tab"  ng-click="gotoProfile()" icon-on="ion-android-person" icon-off="ion-android-person" ui-sref="inapp.profile.outfits">
+    <ion-nav-view name="mainProfile"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

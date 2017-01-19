@@ -1,0 +1,199 @@
+// SETTINGS
+//------------------------------------------------------------------------//
+
+.settings {
+  background-color: $grid-bkg-colour;
+  .icon {
+    color: $font-color-content-secondary;
+    font-size: 21px;
+  }
+  .ion-ios-arrow-forward {
+    color: $primary-color;
+  }
+  .item-divider {
+    font-weight: normal;
+    font-size: 12px;
+  }
+  .last-divider{
+    border: none;
+    background-color: #F1F1F1;
+  }
+  .last-link{
+    border-bottom: 2px solid #DDDDDD;
+  }
+  a.item {
+    font-size: 14px;
+  }
+  .text-content {
+    color: $font-color-content-primary;
+    padding: 20px;
+    strong {
+      font-weight: bold;
+    }
+    h4 {
+      color: $font-color-content-secondary;
+      font-size: 16px;
+    }
+    p {
+      font-size: 11px;
+    }
+  }
+  .mobile-row {
+    img {
+      width: 100%;
+    }
+  }
+  .privacy-description{
+    white-space: normal;
+  }
+  .item-icon-left {
+    padding-left: 35px;
+    .icon {
+      left: 0;
+    }
+  }
+  .item-icon-right {
+    padding-right: 10px;
+    font-size: 14px;
+  }
+  .hidden-input {
+    font-size: 12px;
+    margin: 0;
+    position: absolute;
+    right: 50px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    text-align: right;
+  }
+  .done-button {
+    color: $primary-color;
+  }
+  .item-note {
+    float: right;
+    color: $font-color-content-primary;
+    font-size: 12px;
+    text-transform: capitalize;
+    width: 180px;
+    text-align: right;
+  }
+  .team-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .team-image {
+      height: 60px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .job-details {
+      .job-title {
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 11px;
+        text-align: center;
+      }
+      .job-description {
+        font-size: 10px;
+        line-height: 11px;
+        text-align: center;
+      }
+    }
+    .naresh {
+      background-image: url($team-naresh);
+    }
+    .steph {
+      background-image: url($team-steph);
+    }
+    .patrick {
+      background-image: url($team-patrick);
+    }
+    .dan {
+      background-image: url($team-dan);
+    }
+
+  }
+  .profile-list {
+    margin-bottom: 10px;
+  }
+  .top-row {
+    height: 165px;
+    flex-wrap: wrap;
+    background-color: #C6C6C6;
+    padding: 0;
+    .avatar-details {
+      z-index: 9;
+      height: 70%;
+      padding: 0;
+      margin-bottom: 5px;
+      .avatar-container {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        z-index: 3;
+        .item-avatar {
+          position: relative;
+          padding-left: 0;
+          height: 65px;
+          margin-top: 0;
+          margin-left: 0;
+          border: 3px solid white;
+          border-radius: 50%;
+          overflow: hidden;
+          z-index: 1;
+          width: 65px;
+          min-height: 0;
+          .avatar-image {
+            height: 90px;
+            width: 100%;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            // background-image: url($avatar-placeholder);
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+    .instructions {
+      position: relative;
+      z-index: 2;
+      height: 78px;
+      min-height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      margin-top: -20px;
+      .instruction-text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 13px;
+        width: 70%;
+        text-align: center;
+        font-weight: 700;
+        color: white;
+      }
+    }
+    .cover-image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 310px;
+      width: 130%;
+      position: absolute;
+      left: -6px;
+      top: -5px;
+      z-index: 0;
+      -webkit-filter: blur(5px);
+    }
+    .cover-mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(74, 74, 74, 0.5);
+      top: 0;
+      z-index: 1;
+    }
+
+  }
+}

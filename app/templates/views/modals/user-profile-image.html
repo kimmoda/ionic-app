@@ -1,0 +1,38 @@
+<ion-modal-view class="user-profile-image">
+  <ion-header-bar class="header-bar">
+    <div class="username">
+      @{{data.username}}
+    </div>
+    <div class="close-button" ng-click="closeModal()">
+      <i class="icon ion-android-close"></i>
+    </div>
+  </ion-header-bar>
+  <ion-content scroll="false" class="image-frame">
+    <div class="row">
+      <!-- email avatar image -->
+      <div ng-if="data.avatar.imageType == 0">
+        <img ng-src="data:image/jpeg;base64,{{data.avatar.image}}" alt="">
+      </div>
+      <!-- facebook avatar image -->
+      <div ng-if="data.avatar.imageType == 1">
+        <img ng-src="{{data.avatar.image}}" alt="">
+      </div>
+      <!-- twitter avatar image -->
+      <div ng-if="data.avatar.imageType == 2">
+        <img ng-src="{{data.avatar.image}}" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-50">
+        <button class="button button-primary-full" ng-click="getImage(0)">
+          <i class="icon ion-image"></i>
+        </button>
+      </div>
+      <div class="col-50">
+        <button class="button button-primary-full" ng-click="getImage(1)">
+          <i class="icon ion-ios-camera" ></i>
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

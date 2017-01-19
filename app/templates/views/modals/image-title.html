@@ -1,0 +1,21 @@
+<ion-modal-view class="tag-title">
+  <ion-header-bar class="header-bar" ng-click="closeModalTitle(1)">
+    <h1 class="title">Add title</h1>
+    <div class="close-button">
+      <i class="icon ion-android-close"></i>
+    </div>
+  </ion-header-bar>
+  <ion-content class="text-content">
+    <div class="instructions">
+      Please be as descriptive as you can about the item of clothing you are posting so that people can find this item.<br>
+      <strong>Word count max 30 / 15 Emoji's</strong><strong>
+    </div>
+    <input focus-me type="text" ng-model="photoDetails.title" maxlength="30" ng-maxlength="30" />
+    <span class="counter">{{photoDetails.title.length || 0}}/30</span>
+    <div class="row">
+      <div class="col text-align-center">
+        <button class="button button-primary-full" ng-click="closeModalTitle(1)" ng-disabled="!photoDetails.title">Add Title</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

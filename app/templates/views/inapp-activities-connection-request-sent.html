@@ -1,0 +1,43 @@
+<ion-view class="connections" hide-back-button="true">
+  <custom-backdrop></custom-backdrop>
+  <ion-nav-title>
+    <div class="header-icon"></div>
+  </ion-nav-title>
+  <ion-content>
+    <ion-list show-delete="shouldShowDelete" can-swipe="listCanSwipe">
+      <ion-item ng-class="{'active' : item.status == 'unread'}" ng-repeat="item in friendRequestSent" ng-init="user = users.$load(item.$id)">
+        <div class="item-holder">
+          <div class="avatar-holder">
+            <div class="avatar-image" style="background-image: url('data:image/jpeg;base64,{{::user.avatar.image}}')"></div>
+            <span ng-hide="user.avatar.image" class="profile-avatar-placeholder">
+            <i class="icon-avatar-placeholder"></i>
+            </span>
+          </div>
+          <div class="notification-text">
+            <div class="main-content">
+              <span class="user">@{{user.username}}</span> has sent you a friend requested
+            </div>
+          </div>
+        </div>
+        <div class="user-image-examples">
+          <div class="bottom-images" ng-repeat="userImages in user.posts | toArray | limitTo: 4"
+               ng-init="image = images.$load(userImages.imageId)">
+            <div class="image" style="background-image: url('data:image/jpeg;base64,{{image.image}}')">
+            </div>
+          </div>
+        </div>
+        <ion-option-button class="button-positive delete-notification" ng-click="deleteItem(item)">
+          <i class="ion-ios-trash-outline cross-icon"></i>
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+    <ion-spinner ng-if="!noMoreItemsAvailable" ng-show="loadMoreItems" icon="spiral" class="spinner spinner-ios feed-spinner"></ion-spinner>
+    <div class="no-more-items">
+      <i class="icon ion-person-add"></i>
+      No requests sent
+    </div>
+    <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+
+

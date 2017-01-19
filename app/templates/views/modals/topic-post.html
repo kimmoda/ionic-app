@@ -1,0 +1,23 @@
+<ion-modal-view class="topic-modal-post">
+  <ion-header-bar class="header-bar">
+    <h1 class="title">Post a topic</h1>
+    <i class="icon ion-android-close" ng-click="closeModalTitle(1)"></i>
+    <i class="icon ion-image" ng-click="getImage(0)"></i>
+    <i class="icon ion-ios-camera" ng-click="getImage(1)"></i>
+  </ion-header-bar>
+  <ion-content class="text-content">
+    Please be as descriptive as you can about the item of clothing you are posting so that people can find this item.
+    Word count max 30
+
+    <input focus-me type="text" ng-model="topicPost.comment" maxlength="100" ng-maxlength="100" />
+    <span class="counter">{{topicPost.comment.length || 0}}/100</span>
+    <div class="row" ng-if="imgURI">
+      <img ng-src="{{imgURI}}" alt="">
+    </div>
+    <div class="row">
+      <div class="col text-align-center">
+        <button class="button button-primary-full" ng-click="uploadTopic()" ng-disabled="!topicPost.comment">Post topic</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

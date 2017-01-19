@@ -1,0 +1,109 @@
+<ion-view class="camera" cache-view="false" style="z-index: 99999999">
+  <ion-nav-title>
+    <div class="header-icon"></div>
+  </ion-nav-title>
+  <ion-nav-buttons side="left">
+
+    <button ng-click="myGoBack()" class="button back-button buttons button-clear header-item">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+
+  </ion-nav-buttons>
+
+  <ion-content scroll="false">
+    <div class="image-holder" id="imageContainer" ng-click="addTag(item, $index)" on-tap="onGesture($event)">
+      <div ng-repeat="item in items" class="tag-container">
+        <div class="square" ion-pinch id="tagpin_{{$index}}">
+          <span class="text">{{item.itemDescription.join(', ')}}</span>
+          <div class="tag-pin-new"></div>
+        </div>
+      </div>
+      <div class="image-frame" ng-style="{'background-image': 'url( data:image/jpeg;base64,' + imgURI + ')'}"></div>
+    </div>
+
+    <div class="details-section">
+      <div class="post-form">
+        <div class="collapsed-section tag-collapse" ng-if="tagShow">
+          <div class="camera-post-title">
+              <span class="text" ng-hide="(items).length">
+                Click on image
+              </span>
+              <span class="text" ng-hide="!(items).length">
+                You can tag up to 5 brands
+              </span>
+          </div>
+          <ion-scroll direction="y">
+            <ul class="outfit-icons">
+              <li class="outfit-button" ng-repeat="item in items">
+                <div class="icon" ng-class="{'female': item.sex == 'female' , 'male': item.sex == 'male' }"
+                     ng-click="addItemToggle(item, $index)">
+                  <div class="cloth-item">
+                    <div class="cloth-icon" ng-if="item.itemIcon"
+                         ng-style="{'background-image': 'url(./images/cloth-item-' + item.sex + '-' + item.itemIcon + '.png)'}"></div>
+                  </div>
+                  <div>
+                    {{item.itemName}}
+                  </div>
+                </div>
+                <div class="name-of-clothing">
+                  <input readonly="false"
+                         ion-autocomplete
+                         type="text"
+                         class="ion-autocomplete"
+                         id="autocomplete_{{$index}}"
+                         ng-model="item.itemDescription"
+                         item-value-key="companyName"
+                         item-view-value-key="companyName"
+                         items-method="getBrands(query)"
+                         items-method-value-key="items"
+                         items-clicked-method="itemsClicked(callback)"
+                         max-selected-items="1"
+                         cancel-label="Go back"
+                         showLoadingIcon="true"
+                         ng-model-options="{debounce:1000}"
+                         placeholder="Tap to search..."
+                  />
+                </div>
+                <div class="delete-item" ng-click="deleteItem(item, $index)">
+                  <i class="ion-ios-trash-outline cross-icon"></i>
+                </div>
+              </li>
+            </ul>
+          </ion-scroll>
+        </div>
+        <div class="add-tag-button" ng-click="startTag()">
+          <div class="tag-text add-tag" ng-if="!tagShow">
+            Tap here to add Tags
+            <i class="icon ion-ios-pricetag"></i>
+          </div>
+          <div class="finish-text finish-tag" ng-if="tagShow" >Finish Tagging</div>
+        </div>
+        <div class="collapsed-section title-collapse" ng-if="!tagShow">
+          <div class="main-title">
+            <div class="row">
+              <div class="col title-container" ng-click="openModal(1)">
+                {{photoDetails.title}}
+                <span ng-if="!photoDetails.title">Click here to add a title</span>
+              </div>
+            </div>
+            <div class="row proceed-buttons">
+              <div class="row">
+                <div class="col col-50">
+                  <button class="button button-block button-signup" ng-click="myGoBack()">
+                    <i class="icon ion-android-close"></i>
+                  </button>
+                </div>
+                <div class="col col-50">
+                  <button class="button button-block button-signup" ng-disabled="!photoDetails.title" type="submit"
+                          ng-click="upload()">
+                    <i class="icon ion-android-done"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

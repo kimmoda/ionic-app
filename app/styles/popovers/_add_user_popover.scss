@@ -1,0 +1,65 @@
+// ADD USER POPOVER
+//------------------------------------------------------------------------//
+
+.add-user-popover {
+  align-items: center;
+  .popup{
+    width: 280px;
+    position: relative;
+    border-radius: 0;
+    padding: 20px;
+    background: url($popover-bkg-add-user);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: -25px;
+    background-color: white;
+    max-height: 430px;
+    .popup-head{
+      border: none;
+      position: relative;
+      .popup-title {
+        margin: 0;
+        padding: 110px 0 0 0;
+        font-size: 20px;
+      }
+      .popup-sub-title {
+        margin: 5px 0 0 0;
+        padding: 0;
+        font-weight: normal;
+        font-size: 11px;
+        margin-bottom: 15px;
+      }
+      &:after{
+        content: '';
+        background: url($popover-icon-add-user);
+        background-repeat: no-repeat;
+        height: 120px;
+        width: 110px;
+        position: absolute;
+        background-size: contain;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 10px;
+      }
+    }
+    .popup-body {
+      display: none;
+    }
+    .popup-buttons{
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      min-height: 0;
+      .button-primary-full, .button-accent-full{
+        border-radius: 50px !important;
+        font-size: 12px;
+        line-height: 13px !important;
+        min-height: 0;
+        height: 40px;
+        position: relative;
+        top: -8px;
+      }
+    }
+  }
+}

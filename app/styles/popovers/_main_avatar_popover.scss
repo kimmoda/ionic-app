@@ -1,0 +1,54 @@
+// MAIN AVATAR POPOVER 
+//------------------------------------------------------------------------//
+
+.main-avatar-popver {
+    align-items: flex-start;
+    .popup{
+        background-color: transparent !important;
+        position: relative;
+        .popup-head{
+            border: none;
+            position: relative;
+        }
+        .popup-buttons{
+            width: 173px;
+            margin: 0 auto;
+            position: relative;
+            .button.camera-button{
+                border-color: transparent;
+                background-color: $primary-color;
+                color: white;
+                border-radius: 50%;
+                height: 55px;
+                margin-right: 20px;
+                left: -119px;
+                top: 45px;
+                position: relative;
+                width: 20px;
+            }
+            .button.album-button{
+                border-color: transparent;
+                background-color: $primary-color;
+                color: white;
+                border-radius: 50%;
+                height: 53px;
+                margin-right: 20px;
+                left: 90%;
+                top: 44px;
+                width: 53px;
+            }
+            .button.close-button{
+                margin-right: 0px;
+                position: absolute;
+                top: 52%;
+                left: 24%;
+                border-color: transparent;
+                background-color: $secondary-color;
+                color: white;
+                border-radius: 50%;
+                height: 90px;
+                width: 92px;
+            }
+        }
+    }
+}

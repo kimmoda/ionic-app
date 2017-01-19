@@ -1,0 +1,55 @@
+// IMAGE DETAILS POPOVER
+//------------------------------------------------------------------------//
+
+.image-details-popver {
+  align-items: center;
+  .popup{
+    position: relative;
+    border-radius: 5px;
+    .popup-head{
+      border: none;
+      position: relative;
+      .popup-title {
+        margin: 0;
+        padding: 0;
+        font-size: 26px;
+      }
+    }
+    .popup-body {
+      text-align: left;
+      font-size: 19px;
+      list-style: none;
+      li{
+        margin-bottom: 20px;
+      }
+      .ion-sad-outline{
+        font-size: 70px;
+        text-align: center;
+        margin: 0 auto;
+        position: relative;
+        color: $accent-color;
+      }
+      input{
+        border: 1px solid $accent-color;
+        color: $font-color-content-primary;
+        border-radius: 5px;
+        padding: 20px 15px 20px 15px;
+      }
+    }
+    .popup-buttons{
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      .button-primary-full{
+        border-radius: 50px !important;
+        font-size: 12px;
+        line-height: 13px !important;
+      }
+      .button-accent-full{
+        border-radius: 50px !important;
+        font-size: 12px;
+        line-height: 13px !important;
+      }
+    }
+  }
+}

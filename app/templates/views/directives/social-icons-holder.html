@@ -1,0 +1,31 @@
+<div class="item item-social">
+  <div class="details-holder">
+    <div class="like-indicator" ng-class="{'active' : post.comments}" ng-click="viewCommentsList(post)">
+      <i class="icon ion-ios-chatbubble"></i>
+      <div class="like-description">
+        Say something
+      </div>
+      <span class="count chat-count" ng-hide="post.comments == null">
+        <span class="number">{{(post.comments| toArray : false|filter:query).length}}</span>
+      </span>
+    </div>
+    <div class="like-indicator" ng-class="{'active' : checkIfUserHasLiked(post.upVote, post)}" ng-click="upVote(post, user)">
+      <i class="icon ion-android-star"></i>
+      <div class="like-description">
+        Do you like this?
+      </div>
+      <span class="count like-count" ng-hide="post.upVote == null">
+          <span class="number">{{(post.upVote| toArray : false|filter:query).length}}</span>
+      </span>
+    </div>
+    <div class="like-indicator" ng-class="{'active' : checkIfUserHasHung(post.wardrobeRef, post)}" ng-click="addToWardrobe(post, user)">
+      <i class="icon-myfeed-icon"></i>
+      <div class="like-description">
+        Hang in wardrobe
+      </div>
+      <span class="count wardrobe-count" ng-hide="post.wardrobeRef == null">
+        <span class="number">{{(post.wardrobeRef| toArray : false|filter:query).length}}</span>
+      </span>
+    </div>
+  </div>
+</div>

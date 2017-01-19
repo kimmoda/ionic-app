@@ -1,0 +1,110 @@
+// SIGNUP LAYOUT
+//------------------------------------------------------------------------//
+
+.signup-bkg {
+    background: url($main-background);
+    background-size: 100% 100%;
+    position: fixed !important;
+}
+
+.signup {
+    a.login-link {
+        border-bottom: 1px solid white;
+    }
+    .scroll {
+        height: 100%;
+    }
+    .main-logo {
+        @include logo-login;
+    }
+    .list-inset {
+        margin: 0px 10px;
+        background: transparent;
+        width: 100%;
+        .facebook-container{
+            background-color: #3864A3;
+        }
+        .twitter-container{
+            background-color: #659FCB;
+        }
+        .outfitpic-container{
+            background-color: #E85D57;
+        }
+        .signup-container {
+            // border: 1px solid white;
+            width: 100%;
+            height: 42%;
+            display: inline-block;
+            margin-bottom: 10px;
+            .signup-text {
+                color: $font-color-white;
+                float: left;
+                width: 80%;
+                padding: 14px 10px 16px 10px;
+            }
+            .icon {
+                color: white;
+            }
+            .signup-facebook-container {
+                @include sign-up-icon(6px 20px 9px 20px);
+                .ion-social-facebook{
+                    font-size: 27px;
+                    position: relative;
+                    left: 2px;
+                    top: -2px;
+                }
+            }
+            .signup-twitter-container {
+                @include sign-up-icon(6px 20px 9px 20px);
+                .ion-social-twitter{
+                    font-size: 22px;
+                    position: relative;
+                    left: -4px;
+                    top: 2px;
+                }
+            }
+            .signup-email-container {
+                @include sign-up-icon(6px 20px 9px 20px);
+                .ion-ios-email{
+                    font-size: 27px;
+                    position: relative;
+                    top: -2px;
+                    left: -3px;
+                }
+            }
+        }
+    }
+    .button-outline, .button-outline.activated {
+        @include fadeInUp($duration: 0.3s, $delay: 0.5s);
+    }
+    .signup-container-anim {
+       @include fadeIn($duration: 0.3s, $delay: 0.5s);
+    }
+    .login-link{
+        position: relative;
+        top: 15px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        a{
+            width: 20%;
+            height: 40px;
+            // background-color: blue;
+            display: flex;
+            justify-content: center;
+            .login-holder{
+                border: 1px solid #f8f8f8;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                position: relative;
+                background-color: #f8f8f8;
+                color: $font-color-content-primary;
+            }
+        }
+    }
+}

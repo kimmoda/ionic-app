@@ -1,0 +1,247 @@
+// TOPIC MODAL VIEW
+//------------------------------------------------------------------------//
+.topic-modal-view {
+  background: rgba(0, 0, 0, 0.9);
+  .header-bar {
+    background: transparent;
+    .avatar-holder {
+      width: 13% !important;
+      padding: 3px 3px 3px 2px;
+      overflow: visible;
+      height: 51px;
+      position: relative;
+      span.profile-avatar-placeholder {
+        font-size: 22px;
+        left: 25%;
+        right: 0;
+        top: 9px;
+        color: $icon-grey;
+      }
+      .avatar-image {
+        border-radius: 50%;
+        width: 30px;
+        height: 31px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 9;
+        border: 1px solid #ddd;
+        top: -6px;
+        left: 10px;
+      }
+    }
+    h1{
+      text-align: left;
+      left: 50px !important;
+      top: -8px;
+    }
+    .ion-android-close {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      left: 80%;
+      right: 0;
+      margin: auto;
+      width: 50px;
+      top: 0;
+      height: 30px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ion-ios-camera {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      left: 52%;
+      right: 0;
+      margin: auto;
+      width: 0px;
+      top: 15px;
+    }
+    .ion-image {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      left: 79%;
+      right: 0;
+      margin: auto;
+      width: 0px;
+      top: 15px;
+    }
+  }
+  .text-content {
+    margin-top: 0px;
+    display: flex;
+    color: white;
+    padding: 0px;
+    .scroll {
+      padding-bottom: 40px;
+      width: 100%;
+    }
+    input[type="text"] {
+      color: white;
+      background-color: transparent;
+      border-bottom: 1px solid $border-light-grey;
+      width: 100%;
+    }
+    .button-primary-full{
+      width: 200px;
+      margin-top: 20px;
+    }
+    img{
+      width: 100%;
+      height: 0%;
+    }
+    .topic-post-text{
+      padding: 10px;
+      font-size: 12px;
+    }
+    .details-holder {
+      width: 100%;
+      display: flex;
+      height: 26px;
+      .like-indicator {
+        width: 33.33%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .ion-android-star{
+          font-size: 23px !important;
+        }
+        .icon-myfeed-icon {
+          color: $icon-light;
+          top: 1px;
+          position: relative;
+        }
+        .like-description {
+          display: none;
+        }
+        .icon {
+          font-size: 25px;
+          color: $icon-light;
+        }
+        span.count {
+          font-size: 10px;
+          position: absolute;
+          top: 40%;
+          bottom: 0px;
+          right: 28%;
+          height: 13px;
+          z-index: 12;
+          width: 13px;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          border-radius: 50%;
+          span.number {
+            color: white;
+            height: -10px;
+            font-size: 9px;
+            z-index: 999;
+            position: relative;
+            top: 0px;
+            left: 2px;
+          }
+
+        }
+      }
+      .like-indicator.active {
+        .ion-android-star, .ion-happy-outline {
+          color: $icon-star;
+        }
+        .icon-myfeed-icon {
+          color: $icon-light-primary;
+        }
+        .ion-sad-outline {
+          color: $icon-light-primary;
+        }
+        .ion-ios-chatbubble {
+          color: $icon-chat;
+        }
+      }
+      .add-user {
+        display: none;
+      }
+
+    }
+    .comments-list {
+      margin-bottom: 80px;
+      width: 100%;
+      .comment-container {
+        padding: 0 5px 0;
+        display: flex;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        .avatar-holder {
+          width: 16%;
+          padding: 3px 3px 3px 2px;
+          overflow: visible;
+          height: 59px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          span.profile-avatar-placeholder {
+            font-size: 30px;
+            left: 5%;
+            right: 0;
+            top: 16px;
+            color: $icon-grey;
+          }
+          .avatar-image {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 9;
+            border: 1px solid #ddd;
+          }
+        }
+        .main-text {
+          width: 90%;
+          padding: 10px;
+          .user {
+            font-size: 15px;
+            color: white;
+          }
+          .comment {
+            font-size: 12px;
+            color: white;
+          }
+        }
+        .timestamp {
+          width: 12%;
+          padding: 3px 3px 3px 2px;
+          overflow: visible;
+          height: 59px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          text-align: center;
+          color: $font-color-content-secondary;
+          span {
+            font-size: 7px;
+            line-height: 10px;
+            left: 2px;
+            position: relative;
+          }
+
+        }
+      }
+    }
+  }
+}

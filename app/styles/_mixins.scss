@@ -1,0 +1,49 @@
+// MIXINS
+//------------------------------------------------------------------------//
+
+// LOGIN INPUT FIELDS
+@mixin login-input-fields {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background: transparent;
+    color: white;
+    width: 88%;
+    display: inline-block;
+    margin-bottom: 7%;
+    float: left;
+    height: 52px;
+}
+
+// LOGO FOR LOGIN SCREENS{
+@mixin logo-login {
+    @include at2x("../images/logo-registration-beta", 103px, 112px, ".png");
+    height: 112px;
+    width: 103px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 10% auto 5%;
+    @include fadeInDown($duration: 0.2s, $delay: 0.3s);
+}
+
+@mixin sign-up-icon($padding) {
+    float: left;
+    width: 20%;
+    padding: $padding;
+    border-right: 1px dashed white;
+    height: 36px;
+    display: inline-block;
+    margin-top: 7px;
+}
+
+@mixin center-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-content{
+    @include center-content;
+}
+

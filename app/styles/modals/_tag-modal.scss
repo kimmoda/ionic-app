@@ -1,0 +1,170 @@
+// TAG MODAL
+//------------------------------------------------------------------------//
+.tag-icons {
+  background: rgba(0, 0, 0, 0.7);
+  .header-bar {
+    background: transparent;
+    border-bottom: none;
+    .ion-android-close {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      left: -79%;
+      right: 0;
+      margin: auto;
+      width: 0px;
+      top: 12px;
+    }
+    .ion-android-done {
+      position: absolute;
+      color: white;
+      font-size: 20px;
+      left: 79%;
+      right: 0;
+      margin: auto;
+      width: 0px;
+      top: 32px;
+    }
+  }
+  .text-content {
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+  }
+  .switch-row {
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    .inactive {
+      opacity: 0.2;
+    }
+    .sex {
+      font-size: 22px;
+      text-transform: uppercase;
+      font-weight: bold;
+      &.female {
+        color: $female-color;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        top: 1px;
+        .ion-female {
+          margin-right: 10px;
+          position: relative;
+          top: -1px;
+          font-size: 27px;
+        }
+      }
+      &.male {
+        color: $male-color;
+        display: flex;
+        justify-content: flex-start;
+        .ion-male {
+          margin-left: 10px;
+          position: relative;
+          top: -1px;
+          font-size: 22px;
+        }
+      }
+    }
+    .item {
+      background: transparent;
+      border: none;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 33.33%;
+      padding: 0;
+      .toggle {
+        position: relative;
+        top: 0;
+        right: 0;
+        z-index: 3;
+      }
+      .toggle input:checked + .track {
+        border-color: $male-color;
+        background-color: $male-color;
+      }
+      .toggle input + .track {
+        border-color: $female-color;
+        background-color: $female-color;
+      }
+    }
+  }
+
+  ul.outfit-icons.male {
+    li.outfit-button {
+      .icon {
+        background-color: $male-color;
+      }
+    }
+  }
+  ul.outfit-icons {
+    position: relative;
+    flex-wrap: wrap;
+    &.female-fix {
+      top: -10px;
+    }
+    li.outfit-button[disabled] {
+      opacity: .4;
+      cursor: default !important;
+      pointer-events: none;
+    }
+    li.outfit-button {
+      margin-bottom: 20px;
+      height: 90px;
+      position: relative;
+      text-align: center;
+      width: 33.333%;
+      .item-tick {
+        display: none;
+      }
+      .icon {
+        background-color: $female-color;
+        border-radius: 5px;
+        height: 80px;
+        border-radius: 50%;
+        width: 80px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: relative;
+        margin: 0 auto;
+        .cloth-item {
+          width: 58px;
+          height: 51px;
+          position: relative;
+          background-position: center center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .small-item{
+          background-size: cover;
+        }
+      }
+      .name-of-clothing {
+        font-size: 11px;
+        color: white;
+      }
+    }
+    li.outfit-button.selected {
+      .item-tick {
+        display: block;
+        position: absolute;
+        right: 16%;
+        background-color: $green-tick-color;
+        border-radius: 50%;
+        padding: 0px;
+        height: 18px;
+        width: 18px;
+        text-align: center;
+        top: 4px;
+        color: white;
+        z-index: 9;
+      }
+    }
+  }
+}

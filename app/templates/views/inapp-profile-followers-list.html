@@ -1,0 +1,24 @@
+<ion-view class="friends-list">
+  <ion-nav-title>
+    <div class="header-icon"></div>
+  </ion-nav-title>
+  <ion-content>
+    <ion-list show-delete="shouldShowDelete" can-swipe="listCanSwipe">
+      <ion-item ng-repeat="friend in userFriends" ng-init="user = users.$load(friend.user)">
+        <div class="item-holder">
+          <avatar-holder></avatar-holder>
+          <div class="click-holder">
+            <div class="notification-text">
+              <div class="main-content">
+                <span class="user"> @{{::user.username}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ion-option-button class="button-positive delete-notification" ng-click="deleteItem(item)">
+          <i class="ion-ios-trash-outline cross-icon"></i>
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

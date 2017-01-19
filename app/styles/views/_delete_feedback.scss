@@ -1,0 +1,58 @@
+// DELETE FEEDBACK
+//------------------------------------------------------------------------//
+
+.delete-feedback {
+  background: url($delete-app-bkg);
+  background-size: cover;
+  .main-logo {
+    @include logo-login;
+    height: 77px;
+    width: 73px;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    margin: 5% auto 0;
+  }
+  h4 {
+    color: white;
+    text-align: center;
+  }
+  .item {
+    background-color: transparent;
+    border: none;
+  }
+  .item-radio .radio-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    visibility: initial;
+    padding: 14px;
+    height: 100%;
+    font-size: 24px;
+  }
+  .item-radio .item-content {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 12px;
+    white-space: pre-line;
+    padding: 0px 49px 16px 16px;
+  }
+  .item-radio input:checked + .radio-content .item-content {
+    background: transparent;
+    color: white;
+    font-size: 12px;
+  }
+  .item-radio input:checked + .radio-content .radio-icon {
+    visibility: visible;
+    color: $green-tick-color;
+
+  }
+  .button-delete{
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+  }
+}
+

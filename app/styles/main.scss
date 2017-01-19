@@ -1,0 +1,86 @@
+// VENDOR
+@import "vendors/animate/animate";
+@import "vendors/retina";
+@import "vendors/filter_bar";
+@import "vendors/tab_slider";
+@import "vendors/rsslider";
+@import "vendors/toast";
+// @import "vendors/slidingTabs";
+@import "ionic-styles";
+
+//BASE
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+// must be added here
+@import "vendors/autocomplete";
+
+// LAYOUT
+@import "layout/keyframe_animations";
+@import "layout/forms";
+@import "layout/buttons";
+@import "layout/base";
+@import "layout/bottom_nav";
+@import "layout/header";
+@import "layout/icons";
+@import "layout/testing";
+@import "layout/typography";
+@import "layout/loading_spinner";
+@import "layout/ng_animations";
+@import "layout/placeholders";
+@import "layout/dividers";
+@import "layout/toast";
+@import "layout/grid-containers";
+@import "layout/grid-containers-comments";
+
+//POPOVERS
+@import "popovers/add_user_popover";
+@import "popovers/camera_popover";
+@import "popovers/error-popver";
+@import "popovers/delete_image_popover";
+@import "popovers/delete_profile_popover";
+@import "popovers/delete-notifications-popver.scss";
+@import "popovers/first_time_popover";
+@import "popovers/image-details-popver";
+@import "popovers/poor-connection-popver";
+@import "popovers/share-options-popver";
+@import "popovers/user-options-popver";
+@import "popovers/remove-friend-popver";
+@import "popovers/remove-profile-popver";
+
+// MODALS
+@import "modals/back-error-modal";
+@import "modals/disclaimer-modal";
+@import "modals/modal-styling";
+@import "modals/tag-modal";
+@import "modals/title-modal";
+@import "modals/topic-modal-view";
+@import "modals/topic-modal-post";
+@import "modals/user-profile-image";
+@import "modals/user-level-modal";
+@import "modals/tutorial-modal";
+
+// VIEWS
+@import "views/change_password";
+@import "views/camera";
+@import "views/delete_feedback";
+@import "views/friends_and_followers_list";
+@import "views/home";
+@import "views/login";
+@import "views/activities_feed";
+@import "views/connections_feed";
+@import "views/notification_feed";
+@import "views/news_feed";
+@import "views/news_grid";
+@import "views/profile";
+@import "views/image_item_expanded";
+@import "views/registration";
+@import "views/reset";
+@import "views/setup";
+@import "views/settings";
+@import "views/signup";
+@import "views/walkthrough";
+
+// HAS TO BE AT THE BOTTOM
+@import "vendors/scroll-sista";

@@ -1,0 +1,599 @@
+// GRID CONTAINERS
+//------------------------------------------------------------------------//
+
+
+
+.grid-container {
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: block;
+  padding: 5px;
+  width: 100%;
+  @include grid-container-anim($duration: 0.3s, $delay: 0.4s);
+  position: relative;
+  .news-grid-post{
+    height: 200px;
+  }
+  .news-grid-post-header{
+    height: 165px;
+  }
+  .news-grid-post, .news-grid-post-header {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    .item-details {
+      display: flex;
+      padding: 0;
+      height: 38px;
+      overflow: visible;
+      flex-direction: row;
+      .avatar-holder {
+        width: 38px;
+        padding: 3px 3px 3px 2px;
+        overflow: visible;
+        height: 38px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon-avatar-placeholder {
+          font-size: 20px;
+        }
+        .avatar-image {
+          border-radius: 50%;
+          width: 30px;
+          height: 31px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          position: absolute;
+          z-index: 9;
+          border: 1px solid #ddd;
+          top: 3px;
+          left: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .title-container{
+        width: 61%;
+        .title-holder {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 12px;
+          word-wrap: break-word;
+          position: relative;
+          height: 37px;
+          white-space: nowrap;
+          justify-content: flex-start;
+          align-items: center;
+          flex-direction: row;
+          padding-top: 5px;
+          .username {
+            //font-size: 9px;
+            font-size: 0.7em;
+            line-height: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: $font-color-content-primary;
+            text-transform: capitalize;
+          }
+          span.followers {
+            display: block;
+            font-size: 8px;
+            width: 100%;
+            line-height: 0;
+            height: 10px;
+
+          }
+          span.description {
+            display: none;
+          }
+        }
+      }
+
+      .add-user {
+        &.already-added{
+          display: none !important;
+        }
+        width: 14%;
+        color: $icon-idle;
+        text-align: right;
+        padding-right: 8px;
+        font-size: 22px;
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon {
+          font-size: 16px;
+          position: relative;
+        }
+      }
+
+    }
+    .item-social {
+      display: flex;
+      padding: 0;
+      height: 30px;
+      justify-content: flex-start;
+      .details-holder {
+        width: 100%;
+        display: flex;
+        .like-indicator {
+          width: 33.333%;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .ion-android-star {
+            font-size: 25px;
+            transition: all 0.3s ease;
+          }
+          .chat-count{
+            right: -2px;
+          }
+          .ion-ios-chatbubble{
+            top: 1px;
+            position: relative;
+            left: 4px;
+          }
+          .icon-myfeed-icon {
+            color: $icon-light;
+            top: 1px;
+            position: relative;
+            right: 4px;
+            font-size: 17px;
+          }
+          .like-description {
+            display: none;
+          }
+          .icon {
+            font-size: 25px;
+            color: $icon-light;
+          }
+
+          span.count {
+            font-size: 10px;
+            position: absolute;
+            top: 8px;
+            bottom: 0;
+            height: 13px;
+            z-index: 12;
+            width: 13px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            border-radius: 50%;
+
+            span.number {
+              height: -10px;
+              font-size: 0.8em;
+              color: $font-color-content-primary;
+              z-index: 999;
+              position: relative;
+              top: 0;
+              left: 2px;
+            }
+
+          }
+        }
+        .like-indicator.active {
+          .ion-android-star, .ion-happy-outline {
+            color: $icon-star;
+            animation: star-anim 0.2s ease-out 1;
+          }
+          .icon-myfeed-icon {
+            color: $icon-light-primary;
+            animation: wardrobe-anim 0.2s ease-out 1;
+          }
+          .ion-sad-outline {
+            color: $icon-light-primary;
+          }
+          .ion-ios-chatbubble {
+            color: $icon-chat;
+          }
+        }
+        .add-user {
+          display: none;
+        }
+
+      }
+    }
+    .item-image {
+      padding: 0;
+      z-index: 0;
+      position: relative;
+      margin-bottom: -4px;
+      white-space: normal;
+      max-height: 150px;
+      min-height: 140px;
+      height: 1px;
+      a{
+        height: 100%;
+        width: 100%;
+        .image-holder-frame{
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      .title {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        background: -webkit-linear-gradient(top, rgba(12, 12, 12, 0), #1f1f1f);
+        position: absolute;
+        bottom: 0;
+        height: 50px;
+        span.sub-caption {
+          color: white;
+          font-size: 11px;
+          text-align: left;
+          line-height: 18px;
+          width: 84%;
+          padding-bottom: 13px;
+          padding-left: 5px;
+          text-transform: capitalize;
+        }
+        span.tags {
+          display: none;
+
+        }
+        .tag-icon {
+          height: 20px;
+          width: 20px;
+          position: absolute;
+          z-index: 12;
+          bottom: 10px;
+          right: 5px;
+          .tag-pin {
+            height: 20px;
+            width: 20px;
+            background-color: transparent;
+            border-radius: 50%;
+            position: relative;
+            display: block;
+            .tag-pin:after {
+              content: "";
+              background-color: #EC4A3F;
+              height: 59%;
+              width: 59%;
+              border-radius: 50%;
+              position: absolute;
+              top: 20.4%;
+              left: 21%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.expanded {
+  @include fadeInUp($duration: 0.3s, $delay: 0.2s);
+  flex-wrap: wrap;
+  .grid-container {
+    flex: 0 0 1000%;
+    max-width: 100%;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    .news-grid-post{
+      height: 405px;
+    }
+    .news-grid-post-header{
+      height: 204px;
+    }
+    .news-grid-post, .news-grid-post-header {
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 5px #A5A1A1;
+      .item-details {
+        display: flex;
+        padding: 0;
+        height: 53px;
+        overflow: visible;
+        .avatar-holder {
+          width: 55px;
+          padding: 3px 3px 3px 2px;
+          overflow: visible;
+          height: 53px;
+          position: relative;
+          justify-content: center;
+          align-items: center;
+          color: $icon-grey;
+          .icon-avatar-placeholder{
+            font-size: 30px;
+            left: 0;
+            top: 2px;
+          }
+          .avatar-image {
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: 9;
+            border: 1px solid #ddd;
+            top: 3px;
+            left: 5px;
+            background-position: center center;
+          }
+        }
+        .title-container{
+          width: 67%;
+          .title-holder {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 15px;
+            word-wrap: break-word;
+            position: relative;
+            height: 53px;
+            white-space: nowrap;
+            align-items: center;
+            top: 1px;
+            .username {
+              font-size: 14px;
+              position: relative;
+              left: -3px;
+            }
+            span.description {
+              color: $font-color-content-secondary;
+              text-transform: capitalize;
+              font-size: 10px;
+              font-weight: bold;
+              padding-left: 1px;
+              display: block;
+              width: 100%;
+              top: -0.4em !important;
+              position: relative;
+              left: -3px;
+            }
+            span.followers {
+              display: block;
+              font-size: 8px;
+              width: 100%;
+              top: -2px;
+              position: relative;
+              left: -2px;
+            }
+          }
+        }
+
+        .add-user {
+          width: 17%;
+          color: #b2b2b2;
+          padding-right: 8px;
+          font-size: 22px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          .icon {
+            right: 10px;
+            font-size: 23px;
+            position: relative;
+          }
+        }
+      }
+      .item-social {
+        display: flex;
+        padding: 0;
+        height: 60px;
+        justify-content: center;
+        .details-holder {
+          width: 100%;
+          display: flex;
+          .like-indicator {
+            width: 33%;
+            color: #E85D57;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .like-description {
+              color: $icon-dark;
+              font-size: 9px;
+              position: absolute;
+              top: 33px;
+              left: 0;
+              margin: auto;
+              right: 0;
+              text-align: center;
+              padding-top: 1px;
+              display: block;
+            }
+            .ion-android-star{
+              font-size: 35px!important;
+            }
+            .icon-myfeed-icon {
+              font-size: 24px;
+              position: relative;
+              top: -5px;
+              color: $icon-light;
+            }
+            .icon {
+              color: $icon-light;
+              font-size: 35px;
+              top: -7px;
+              position: relative;
+            }
+            .chat-icon {
+              display: block;
+            }
+            span.count {
+              font-size: 12px;
+              position: absolute;
+              right: 17px;
+              width: 20px;
+              top: 15px;
+              height: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              color: $font-color-content-primary;
+              span.number {
+                border-radius: 50%;
+                font-size: 10px;
+                color: $font-color-content-primary;
+                position: relative;
+                top: 1px;
+              }
+            }
+          }
+          .like-indicator.active {
+            .ion-android-star {
+              color: $icon-star;
+            }
+            .icon-myfeed-icon {
+              color: $icon-light-primary;
+            }
+            .ion-ios-chatbubble {
+              color: $icon-chat;
+            }
+          }
+          .add-user {
+            display: none;
+          }
+        }
+      }
+      .item-image {
+        padding: 0;
+        z-index: 0;
+        position: relative;
+        margin-bottom: -4px;
+        white-space: normal;
+        height: 300px;
+        max-height: 300px;
+        .image-holder-frame{
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+        img {
+            width: 100%;
+          }
+        }
+        .title {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: flex-start;
+          width: 100%;
+          background: -webkit-linear-gradient(top, rgba(12, 12, 12, 0), #1f1f1f);
+          position: absolute;
+          bottom: 0;
+          height: 80px;
+          padding: 5px 0 20px 0;
+          span.sub-caption {
+            color: white;
+            font-size: 20px;
+            text-align: left;
+            line-height: 18px;
+            width: 100%;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            position: relative;
+            top: 20px;
+            text-transform: capitalize;
+          }
+          span.no-tags {
+            top: 40px;
+          }
+          span.tags {
+            font-size: 12px;
+            position: relative;
+            top: 15px;
+            left: -5px;
+            display: block;
+            ul {
+              padding: 0 0 0 20px;
+              margin: 0;
+              li {
+                list-style-type: none;
+                display: inline-block;
+                float: left;
+                margin-right: 5px;
+                color: $font-color-content-secondary;
+                font-weight: bold;
+                text-transform: capitalize;
+              }
+            }
+          }
+          .tag-icon {
+            display: none;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            z-index: 12;
+            bottom: 21px;
+            right: 10px;
+            .tag-pin:after {
+              content: "";
+              background-color: #EC4A3F;
+              height: 59%;
+              width: 59%;
+              border-radius: 50%;
+              position: absolute;
+              top: 20.4%;
+              left: 21%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.delete-screen {
+  position: absolute;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 95%;
+  height: 95%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  .text{
+    padding: 15px;
+    z-index: 9;
+  }
+  .background-cancel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+  }
+}
